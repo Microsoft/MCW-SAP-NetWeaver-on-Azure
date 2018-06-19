@@ -1,11 +1,11 @@
-![](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![](images/HeaderPic.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
-SAP NetWeaver on Azure
+SAP Netweaver on Azure
 </div>
 
 <div class="MCWHeader2">
- Whiteboard design session student guide
+Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
@@ -46,7 +46,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 
 <!-- /TOC -->
 
-# SAP on Azure whiteboard design session student guide
+#  SAP on Azure whiteboard design session student guide
 
 ## Abstract and learning objectives 
 
@@ -65,20 +65,22 @@ Attendees will be better able to deploy SAP on Azure infrastructure components a
 **Outcome** 
 
 Analyze your customer’s needs.
+
 Time frame: 15 minutes 
+
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
 3.  As a table team, review the following customer case study
-
 
 ### Customer situation
 
 Contoso Group is a US-based telecommunications company with worldwide operations serving almost 150 million mobile subscribers. The company is looking to optimize its IT environment and considering moving some of its on-premises SAP workloads to Azure.
 
-Contoso Group has an existing on-premises deployment of SAP ECC (SAP ERP Central Component) 6.0 on Windows Server 2012 R2 with a SQL Server 2014 database in its US-based data center near New York City. The deployment consists of the development, test, quality assurance, and production systems. However, the IT organization finds it challenging to expand the SAP landscape to accommodate growing number of SAP-related business requests. This is related to the time and resources required to move through development and testing phases and implement new business processes into production. In addition, IT finds it difficult to adjust the size of the production environment in order to accommodate varying level of workloads. IT is also concerned about lack of high availability and disaster recovery capabilities in the existing deployment. The estimates of providing such capabilities for production workloads exceed by far the budget allocated for this purpose.
+Contoso Group has an existing on-premises deployment of SAP ECC (SAP ERP Central Component) 6.0 on Windows Server 2012 R2 with a SQL Server 2014 database in its US-based data center near New York City. The deployment consists of the development, test, quality assurance, and production systems. However, the IT organization finds it challenging to expand the SAP landscape to accommodate growing number of SAP-related business requests. This is related to the time and resources required to move through development and testing phases and implement new business processes into production. In addition, IT finds it difficult to adjust the size of the production environment in order to accommodate varying level of workloads. IT is also concerned about lack of high availability and disaster recovery capabilities in the existing deployment. The estimates of providing such capabilities for production workloads exceed the budget allocated for this purpose by far.
 
-As the result, agility of the organization is hampered by capital expenditures and time necessary to acquire and provision project-related SAP development and testing environments. Representatives of central IT management, including the company CIO Andrew Cross and its VP of IT Operations are concerned about managing test/dev infrastructure costs. There are also concerns regarding aging data center and hardware. Business Development Manager (BDM) and the company CFO would like to lower TCO for the SAP landscape, including the production ECC environment.
+As the result, agility of the organization is hampered by capital expenditures and the time necessary to acquire and provision project-related SAP development and testing environments. Representatives of central IT management, including the company CIO Andrew Cross and its VP of IT Operations are concerned about managing test/dev infrastructure costs. There are also concerns regarding aging data center and hardware. Business Development Manager (BDM) and the company CFO would like to lower TCO for the SAP landscape, including the production ECC environment.
 
 **Current situation**
 
@@ -86,14 +88,13 @@ The production app tier consists of three physical servers, each with 8 CPU core
 
 **Customer Objectives**
 
-As Andrew Cross, the company's CIO wants to significantly improve times it takes to provision development and test SAP environments. At the same time, he stresses the importance of minimizing their cost. He also points out the criticality of the SAP production workloads and the need of protecting them against unplanned downtime. As he stated, "The existing on-premises SAP development and test environments no longer meet the agility required by the fast pace of changes in our business. In addition, our operational dependencies on SAP applications force us to seek reasonably priced availability and disaster recovery capabilities for our production SAP deployments".
+As Andrew Cross, the company's CIO wants to significantly improve times it takes to provision development and test SAP environments. At the same time, he stresses the importance of minimizing their cost. He also points out the criticality of the SAP production workloads and the need of protecting them against unplanned downtime. As he stated, "The existing on-premises SAP development and test environments no longer meet the agility required by the fast pace of changes in our business. In addition, our operational dependencies on SAP applications force us to seek reasonably priced availability and disaster recovery capabilities for our production SAP deployments."
 
 Contoso CIO and the company CFO, along with Business Development Manager (BDM), Director of SAP Business Analysts, and Director of SAP Operations are all open to taking advantage of Azure as a platform and want their respective teams to be able to leverage the scalability and resiliency provided by the cloud platform.
 
 **Existing Contoso SAP environment**
 
-![](images\Whiteboarddesignsessionstudentguide-SAPonAzureimages/media/image2.png)
-
+![](images\Whiteboarddesignsessiontrainerguide-SAPonAzureimages/media/image2.png)
 
 ### Customer needs 
 
@@ -121,7 +122,7 @@ Contoso CIO and the company CFO, along with Business Development Manager (BDM), 
 
 -   RPO=15 min, RTO=6 hours
 
--   Transaction log backups every 15 minutes, full daily backups retained for 1-month, monthly backups retained for 1 year
+-   Transaction log backups every 15 minutes, full daily backups retained for 1 month, monthly backups retained for 1 year
 
 ### Customer objections 
 
@@ -137,7 +138,7 @@ Contoso CIO and the company CFO, along with Business Development Manager (BDM), 
 
 ### Infographic for common scenarios
 
-![A graphic depicting common tools and services used in this session. Depicted are Azure Infrastructure as a Service and SAP on Azure.](images\Whiteboarddesignsessionstudentguide-SAPonAzureimages/media/image3.png "Infographic for common scenarios")
+![A graphic depicting common tools and services used in this session. Depicted are Azure Infrastructure as a Service and SAP on Azure.](images\Whiteboarddesignsessiontrainerguide-SAPonAzureimages/media/image3.png "Infographic for common scenarios")
 
 ## Step 2: Design a proof of concept solution
 
@@ -149,6 +150,7 @@ Time frame: 60 minutes
 **Business needs**
 
 Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
 2.  What customer business needs do you need to address with your solution?
 
@@ -159,29 +161,29 @@ Directions: With all participants at your table, respond to the following questi
 
 Using the features of Azure and the requirements from the customer, design the application infrastructure and network for A Datum SAP deployment in Azure. Consider such factors as cost of ownership of entire SAP landscape as well as availability and disaster recovery capabilities for the production environment.
 
-![](images\Whiteboarddesignsessionstudentguide-SAPonAzureimages/media/image4.png)
+![](images\Whiteboarddesignsessiontrainerguide-SAPonAzureimages/media/image4.png)
 
 Make sure that your design covers the following items:
 
 ***High-level architecture***
 
-**Task:** Identifying the target Azure region(s) and the number of tiers
+**Task:** Identifying the target Azure region(s) and the number of tiers.
 
--   Identify the optimal choices for Azure region(s) where the solution should be deployed.
+-   Identify the optimal choices for Azure region(s) where the solution should be deployed
 
--   Choose between the 2-tier and 3-tier architecture.
+-   Choose between the 2-tier and 3-tier architecture
 
--   Ensure that high-availability and disaster recovery requirements are satisfied.
+-   Ensure that high-availability and disaster recovery requirements are satisfied
 
 ### *Architecting network connectivity*
 
-**Task:** Design a hybrid network (at a high-level), that will allow you to meet all the customer requirements and support your design for moving Contoso SAP landscape to Azure.
+**Task:** Design a hybrid network (at a high-level) that will allow you to meet all the customer requirements and support your design for moving Contoso SAP landscape to Azure.
 
--   Design virtual networking in Azure and suggest the hybrid connectivity configuration between Contoso on-premises environment and Azure.
+-   Design virtual networking in Azure and suggest the hybrid connectivity configuration between Contoso on-premises environment and Azure
 
 ### *Architecting (ASCS) components*
 
-**Task:** Design a highly available and geo-redundant solution for hosting the (A)SCS components of the SAP production environment
+**Task:** Design a highly available and geo-redundant solution for hosting the (A)SCS components of the SAP production environment.
 
 -   Design the architecture that will provide high availability and disaster recovery capabilities for the (A)SCS components of the SAP production environment
 
@@ -193,7 +195,7 @@ Make sure that your design covers the following items:
 
 ### *Architecting application components*
 
-**Task:** Design a scalable, highly available, and geo-redundant solution for hosting the SAP application components of the SAP production environment
+**Task:** Design a scalable, highly available, and geo-redundant solution for hosting the SAP application components of the SAP production environment.
 
 -   Design the architecture that will provide high availability and disaster recovery capabilities for the application components of the SAP production environment
 
@@ -217,7 +219,7 @@ Make sure that your design covers the following items:
 
 ### *Determining estimated cost of the solution*
 
-**Task:** Based on the proposed design, determine the estimated cost of the entire solution
+**Task:** Based on the proposed design, determine the estimated cost of the entire solution.
 
 -   Provide the pricing of the IaaS components of your solution
 
@@ -225,9 +227,9 @@ Make sure that your design covers the following items:
 
 -   Consider cost impact of leveraging Azure VM reserved instances (RI) and Azure Hybrid Benefit (AHUB)
 
-![A diagram mapping customer requirements to the needed sizing in Azure.](images\Whiteboarddesignsessionstudentguide-SAPonAzureimages/media/image5.png "How to size SAP on Azure VMs")
+![A diagram mapping customer requirements to the needed sizing in Azure.](images\Whiteboarddesignsessiontrainerguide-SAPonAzureimages/media/image5.png "How to size SAP on Azure VMs")
 
-![A diagram depicting several areas to complete to make a cross region resilient deployment.](images\Whiteboarddesignsessionstudentguide-SAPonAzureimages/media/image6.png "How to build high availability across regions")
+![A diagram depicting several areas to complete to make a cross region resilient deployment.](images\Whiteboarddesignsessiontrainerguide-SAPonAzureimages/media/image6.png "How to build high availability across regions")
 
 **Prepare**
 
@@ -238,7 +240,6 @@ Directions: With all participants at your table:
 3.  Determine how you will respond to the customer’s objections. 
 
 Prepare a 15-minute chalk-talk style presentation to the customer. 
-
 
 ## Step 3: Present the solution
 
@@ -251,6 +252,7 @@ Time frame: 30 minutes
 **Presentation** 
 
 Directions:
+
 1.  Pair with another table.
 2.  One table is the Microsoft team and the other table is the customer.
 3.  The Microsoft team presents their proposed solution to the customer.
@@ -260,11 +262,12 @@ Directions:
 7.  Tables switch roles and repeat Steps 2–6.
 
 
+
 ##  Wrap-up 
 
 Time frame: 15 minutes
 
--   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+-   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study
 
 ### Additional references 
 
