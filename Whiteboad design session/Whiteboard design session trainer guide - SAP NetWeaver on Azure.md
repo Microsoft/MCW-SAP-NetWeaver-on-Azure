@@ -156,6 +156,7 @@ When participants are doing activities, you can **look ahead to refresh your mem
 
 -   **Consider creating a "parking lot"** to record issues or questions raised that are outside the scope of the whiteboard design session or can be answered later. Decide how you will address these issues, so you can acknowledge them without being derailed by them.
 
+
 ***Have fun**! Encourage participants to have fun and share!*
 
 **Involve your participants.** Talk and share your knowledge but always involve your participants, even while you are the one speaking.
@@ -185,8 +186,11 @@ Attendees will be better able to deploy SAP on Azure infrastructure components a
 **Outcome** 
 
 Analyze your customer’s needs.
+
 Time frame: 15 minutes 
+
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
+
 1.  Meet your table participants and trainer 
 2.  Read all of the directions for steps 1–3 in the student guide 
 3.  As a table team, review the following customer case study
@@ -195,9 +199,9 @@ Directions: With all participants in the session, the facilitator/SME presents a
 
 Contoso Group is a US-based telecommunications company with worldwide operations serving almost 150 million mobile subscribers. The company is looking to optimize its IT environment and considering moving some of its on-premises SAP workloads to Azure.
 
-Contoso Group has an existing on-premises deployment of SAP ECC (SAP ERP Central Component) 6.0 on Windows Server 2012 R2 with a SQL Server 2014 database in its US-based data center near New York City. The deployment consists of the development, test, quality assurance, and production systems. However, the IT organization finds it challenging to expand the SAP landscape to accommodate growing number of SAP-related business requests. This is related to the time and resources required to move through development and testing phases and implement new business processes into production. In addition, IT finds it difficult to adjust the size of the production environment in order to accommodate varying level of workloads. IT is also concerned about lack of high availability and disaster recovery capabilities in the existing deployment. The estimates of providing such capabilities for production workloads exceed by far the budget allocated for this purpose.
+Contoso Group has an existing on-premises deployment of SAP ECC (SAP ERP Central Component) 6.0 on Windows Server 2012 R2 with a SQL Server 2014 database in its US-based data center near New York City. The deployment consists of the development, test, quality assurance, and production systems. However, the IT organization finds it challenging to expand the SAP landscape to accommodate growing number of SAP-related business requests. This is related to the time and resources required to move through development and testing phases and implement new business processes into production. In addition, IT finds it difficult to adjust the size of the production environment in order to accommodate varying level of workloads. IT is also concerned about lack of high availability and disaster recovery capabilities in the existing deployment. The estimates of providing such capabilities for production workloads exceed the budget allocated for this purpose by far.
 
-As the result, agility of the organization is hampered by capital expenditures and time necessary to acquire and provision project-related SAP development and testing environments. Representatives of central IT management, including the company CIO Andrew Cross and its VP of IT Operations are concerned about managing test/dev infrastructure costs. There are also concerns regarding aging data center and hardware. Business Development Manager (BDM) and the company CFO would like to lower TCO for the SAP landscape, including the production ECC environment.
+As the result, agility of the organization is hampered by capital expenditures and the time necessary to acquire and provision project-related SAP development and testing environments. Representatives of central IT management, including the company CIO Andrew Cross and its VP of IT Operations are concerned about managing test/dev infrastructure costs. There are also concerns regarding aging data center and hardware. Business Development Manager (BDM) and the company CFO would like to lower TCO for the SAP landscape, including the production ECC environment.
 
 **Current situation**
 
@@ -205,7 +209,7 @@ The production app tier consists of three physical servers, each with 8 CPU core
 
 **Customer Objectives**
 
-As Andrew Cross, the company's CIO wants to significantly improve times it takes to provision development and test SAP environments. At the same time, he stresses the importance of minimizing their cost. He also points out the criticality of the SAP production workloads and the need of protecting them against unplanned downtime. As he stated, "The existing on-premises SAP development and test environments no longer meet the agility required by the fast pace of changes in our business. In addition, our operational dependencies on SAP applications force us to seek reasonably priced availability and disaster recovery capabilities for our production SAP deployments".
+As Andrew Cross, the company's CIO wants to significantly improve times it takes to provision development and test SAP environments. At the same time, he stresses the importance of minimizing their cost. He also points out the criticality of the SAP production workloads and the need of protecting them against unplanned downtime. As he stated, "The existing on-premises SAP development and test environments no longer meet the agility required by the fast pace of changes in our business. In addition, our operational dependencies on SAP applications force us to seek reasonably priced availability and disaster recovery capabilities for our production SAP deployments."
 
 Contoso CIO and the company CFO, along with Business Development Manager (BDM), Director of SAP Business Analysts, and Director of SAP Operations are all open to taking advantage of Azure as a platform and want their respective teams to be able to leverage the scalability and resiliency provided by the cloud platform.
 
@@ -239,7 +243,7 @@ Contoso CIO and the company CFO, along with Business Development Manager (BDM), 
 
 -   RPO=15 min, RTO=6 hours
 
--   Transaction log backups every 15 minutes, full daily backups retained for 1-month, monthly backups retained for 1 year
+-   Transaction log backups every 15 minutes, full daily backups retained for 1 month, monthly backups retained for 1 year
 
 ### Customer objections 
 
@@ -267,6 +271,7 @@ Time frame: 60 minutes
 **Business needs**
 
 Directions: With all participants at your table, answer the following questions and list the answers on a flip chart. 
+
 1.  Who should you present this solution to? Who is your target customer audience? Who are the decision makers? 
 2.  What customer business needs do you need to address with your solution?
 
@@ -283,23 +288,23 @@ Make sure that your design covers the following items:
 
 ***High-level architecture***
 
-**Task:** Identifying the target Azure region(s) and the number of tiers
+**Task:** Identifying the target Azure region(s) and the number of tiers.
 
--   Identify the optimal choices for Azure region(s) where the solution should be deployed.
+-   Identify the optimal choices for Azure region(s) where the solution should be deployed
 
--   Choose between the 2-tier and 3-tier architecture.
+-   Choose between the 2-tier and 3-tier architecture
 
--   Ensure that high-availability and disaster recovery requirements are satisfied.
+-   Ensure that high-availability and disaster recovery requirements are satisfied
 
 ### *Architecting network connectivity*
 
-**Task:** Design a hybrid network (at a high-level), that will allow you to meet all the customer requirements and support your design for moving Contoso SAP landscape to Azure.
+**Task:** Design a hybrid network (at a high-level) that will allow you to meet all the customer requirements and support your design for moving Contoso SAP landscape to Azure.
 
--   Design virtual networking in Azure and suggest the hybrid connectivity configuration between Contoso on-premises environment and Azure.
+-   Design virtual networking in Azure and suggest the hybrid connectivity configuration between Contoso on-premises environment and Azure
 
 ### *Architecting (ASCS) components*
 
-**Task:** Design a highly available and geo-redundant solution for hosting the (A)SCS components of the SAP production environment
+**Task:** Design a highly available and geo-redundant solution for hosting the (A)SCS components of the SAP production environment.
 
 -   Design the architecture that will provide high availability and disaster recovery capabilities for the (A)SCS components of the SAP production environment
 
@@ -311,7 +316,7 @@ Make sure that your design covers the following items:
 
 ### *Architecting application components*
 
-**Task:** Design a scalable, highly available, and geo-redundant solution for hosting the SAP application components of the SAP production environment
+**Task:** Design a scalable, highly available, and geo-redundant solution for hosting the SAP application components of the SAP production environment.
 
 -   Design the architecture that will provide high availability and disaster recovery capabilities for the application components of the SAP production environment
 
@@ -335,7 +340,7 @@ Make sure that your design covers the following items:
 
 ### *Determining estimated cost of the solution*
 
-**Task:** Based on the proposed design, determine the estimated cost of the entire solution
+**Task:** Based on the proposed design, determine the estimated cost of the entire solution.
 
 -   Provide the pricing of the IaaS components of your solution
 
@@ -368,6 +373,7 @@ Time frame: 30 minutes
 **Presentation** 
 
 Directions:
+
 1.  Pair with another table.
 2.  One table is the Microsoft team and the other table is the customer.
 3.  The Microsoft team presents their proposed solution to the customer.
@@ -382,7 +388,7 @@ Directions:
 
 Time frame: 15 minutes
 
--   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study.
+-   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study
 
 ### Additional references 
 
@@ -402,49 +408,49 @@ Time frame: 15 minutes
 
 ## Step 1: Review the customer case study
 
--   Check in with your table participants to introduce yourself as the trainer.
+-   Check in with your table participants to introduce yourself as the trainer
 
 -   Ask, "What questions do you have about the customer case study?"
 
--   Briefly review the steps and timeframes of the whiteboard design session.
+-   Briefly review the steps and timeframes of the whiteboard design session
 
--   Ready, set, go! Let the table participants begin.
+-   Ready, set, go! Let the table participants begin
 
 ## Step 2: Design a proof of concept solution
 
--   Check in with your tables to ensure that they are transitioning from step to step on time.
+-   Check in with your tables to ensure that they are transitioning from step to step on time
 
--   Provide some feedback on their responses to the business needs and design.
+-   Provide some feedback on their responses to the business needs and design
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own.
+    -   Try asking questions first that will lead the participants to discover the answers on their own
 
--   Provide feedback for their responses to the customer's objections.
+-   Provide feedback for their responses to the customer's objections
 
-    -   Try asking questions first that will lead the participants to discover the answers on their own.
+    -   Try asking questions first that will lead the participants to discover the answers on their own
 
 ## Step 3: Present the solution
 
--   Determine which table will be paired with your table before Step 3 begins.
+-   Determine which table will be paired with your table before Step 3 begins
 
--   For the first round, assign one table as the Microsoft team and the other table as the customer.
+-   For the first round, assign one table as the Microsoft team and the other table as the customer
 
--   Have the Microsoft team present their solution to the customer team.
+-   Have the Microsoft team present their solution to the customer team
 
-    -   Have the customer team provide one objection for the Microsoft team to respond to.
+    -   Have the customer team provide one objection for the Microsoft team to respond to
 
-    -   The presentation and objections should be no longer than 10 minutes.
+    -   The presentation and objections should be no longer than 10 minutes
 
 <!-- -->
 
--   Have participants on the customer team give feedback to the Microsoft team.
+-   Have participants on the customer team give feedback to the Microsoft team
 
-    -   The feedback should be no longer than 5 minutes.
+    -   The feedback should be no longer than 5 minutes
 
-    -   If needed, the trainer may also provide feedback.
+    -   If needed, the trainer may also provide feedback
 
 ## Wrap-up
 
--   Have the table participants reconvene with the larger session group to hear a SME share the following preferred solution.
+-   Have the table participants reconvene with the larger session group to hear a SME share the following preferred solution
 
 ##  Preferred target audience
 
@@ -482,17 +488,17 @@ The preferred solution for this design involves moving the SAP environment from 
 
 **Task:** Identifying the target Azure region(s) and the number of tiers:
 
--   Identify the optimal choices for Azure region(s) where the solution should be deployed
+-   Identify the optimal choices for the Azure region(s) where the solution should be deployed
 
 -   Choose between the 2-tier and 3-tier approach
 
--   Ensure that high-availability and disaster recovery requirements are satisfied.
+-   Ensure that high-availability and disaster recovery requirements are satisfied
 
-**Answer:** By deploying Azure VMs in two regions (with US East 2 as the primary region and US West 2 as the secondary), we are able to address the Disaster Recovery needs of the customer. From the availability standpoint, one of the first decisions you will need to make is whether you will implement a two-tier or three-tier architecture. 3-tier architecture consists of the presentation tier, the application tier, and the database tier. In the two-tier architecture, application and database tiers are combined together running on the same operating system instance.
+**Answer:** By deploying Azure VMs in two regions (with US East 2 as the primary region and US West 2 as the secondary), we are able to address the Disaster Recovery needs of the customer. From the availability standpoint, one of the first decisions you will need to make is whether you will implement a two-tier or three-tier architecture. The 3-tier architecture consists of the presentation tier, the application tier, and the database tier. In the two-tier architecture, the application and database tiers are combined together, running on the same operating system instance.
 
-Three-tier architecture is required to provide high availability in Azure. Each tier should contain two or more VMs in the same availability set to provide 99.95% availability SLA.
+The three-tier architecture is required to provide high availability in Azure. Each tier should contain two or more VMs in the same availability set to provide 99.95% availability SLA.
 
-For best performance, we choose alternate site in same geo - different data centers at least 400 miles apart on the same continent.
+For best performance, we choose the alternate site in the same geo - different data centers at least 400 miles apart on the same continent.
 
 *Preferred solution diagram*
 
@@ -512,11 +518,11 @@ For best performance, we choose alternate site in same geo - different data cent
 
 *Network*
 
-**Task:** Design a hybrid network (at a high-level), that will allow you to meet all the customer requirements and support your design for moving Contoso SAP landscape to Azure:
+**Task:** Design a hybrid network (at a high-level) that will allow you to meet all the customer requirements and support your design for moving Contoso SAP landscape to Azure:
 
--   Design virtual networking in Azure and suggest the hybrid connectivity configuration between Contoso on-premises environment and Azure.
+-   Design virtual networking in Azure and suggest the hybrid connectivity configuration between Contoso on-premises environment and Azure
 
-**Answer:** Use ExpressRoute between the corporate headquarters and two Azure regions that will host the SAP deployment. For development or training scenarios, it might be sufficient to use a site-to-site Virtual Private Network. You can use the online Azure Speed Test to determine the latency you should expect when establishing a site-to-site VPN connection. However, Site-to-Site VPN connections are, at best, limited to 1.25 Gbps and introduce double digit millisecond latencies. For production SAP workloads hosted in Azure, you should consider using ExpressRoute. This allows for establishing a private connection to Azure, providing up to 10 Gbps of bandwidth and lowering latency to a couple of milliseconds.
+**Answer:** Use ExpressRoute between the corporate headquarters and two Azure regions that will host the SAP deployment. For development or training scenarios, it might be sufficient to use a site-to-site Virtual Private Network (VPN). You can use the online Azure Speed Test to determine the latency you should expect when establishing a site-to-site VPN connection. However, Site-to-Site VPN connections are, at best, limited to 1.25 Gbps and introduce double digit millisecond latencies. For production SAP workloads hosted in Azure, you should consider using ExpressRoute. This allows for establishing a private connection to Azure, providing up to 10 Gbps of bandwidth and lowering latency to a couple of milliseconds.
 
 *(A)SCS Components*
 
@@ -538,7 +544,7 @@ Consider using ASR for replication from on-premises to Azure and between Azure r
 
 *Database Components*
 
-**Task:** Design a resilient and scalable SQL Server backend configured to span geographically distributed datacenters
+**Task:** Design a resilient and scalable SQL Server backend configured to span geographically distributed datacenters.
 
 **Answer:** Scaling of the database tier involves increasing or decreasing the size of Azure VMs. For Microsoft SQL Server, we use AlwaysOn Availability Group (AG) built on top of the Windows Server Failover Clustering and leveraging the Cloud Witness quorum, eliminating the dependency on a shared disk or a file share. Azure internal load balancer represents the listener of the SQL Server AlwaysOn Availability Group containing the SAP database.
 
@@ -550,21 +556,21 @@ Failover between Azure SQL VMs from the primary to the secondary Azure region is
 
 1.  If I have already paid for my hardware to run my dev/test environment, how am I getting any cost savings by moving it to Azure?
 
-    **Potential Answer:** A Global audit, tax and consulting company reduced TCO by 40-75% by hosting SAP systems on Azure and turning off unused resources; A global snack food company reduced TCO by 40-75% by moving 126 legacy SAP systems on Azure; A medical supply company reduced TCO by 50% by moving SAP training environment to Azure. Use the TCO tool (http://aka.ms/azuretco) to uncover all categories of potential cost savings (e.g., hardware, software, maintenance, admin, power, facility). Because of the large scale of Microsoft's datacenters, we realize ongoing cost efficiencies that we have been passing to customers in the form of price cuts
+    **Potential Answer:** A Global audit, tax and consulting company reduced TCO by 40-75% by hosting SAP systems on Azure and turning off unused resources. A global snack food company reduced TCO by 40-75% by moving 126 legacy SAP systems on Azure; A medical supply company reduced TCO by 50% by moving SAP training environment to Azure. Use the TCO tool (http://aka.ms/azuretco) to uncover all categories of potential cost savings (e.g., hardware, software, maintenance, admin, power, facility). Because of the large scale of Microsoft datacenters, we realize the ongoing cost efficiencies that we have been passing to customers in the form of price cuts.
 
-    For very large customers, highlight other benefits (e.g., agility, focus) of using Azure
+    For very large customers, highlight other benefits (e.g., agility, focus) of using Azure.
 
 2.  What if I need my cloud resources to access on-premises resources?
 
-    **Potential Answer:** Microsoft supports a hybrid solution, with symmetry between on-premises applications and those on the public cloud. Windows Azure Virtual Network allows to create a logically isolated section in Azure and securely connect it to their on-premises datacenter. If customer needs dedicated connectivity, talk to them about ExpressRoute.
+    **Potential Answer:** Microsoft supports a hybrid solution, with symmetry between on-premises applications and those on the public cloud. Windows Azure Virtual Network allows them to create a logically isolated section in Azure and securely connect it to their on-premises datacenter. If the customer needs dedicated connectivity, talk to them about ExpressRoute.
 
 3.  Will Azure meet our security and compliance requirements?
 
-    **Potential Answer:** Microsoft policy is to be the most transparent about security and compliance policies, procedures, and certifications on the public facing Azure Trust Center
+    **Potential Answer:** Microsoft policy is to be the most transparent about security and compliance policies, procedures, and certifications on the public facing Azure Trust Center.
 
-    Dev/Test workload usually has limited security/compliance requirements
+    Dev/Test workload usually has limited security/compliance requirements.
 
-    Encourage the customer to visit our Azure data centers
+    Encourage the customer to visit our Azure data centers.
 
 4.  Do I have to pay for resources when they are stopped?
 
@@ -572,11 +578,11 @@ Failover between Azure SQL VMs from the primary to the secondary Azure region is
 
     Deallocating does not mean deleting the VM as it still exists in storage.
 
-    You will still incur storage charge even if the VM is deallocated
+    You will still incur storage charge even if the VM is deallocated.
 
 5.  Can I automate the shutdown at periodic times of day?
 
-    **Potential Answer:** Yes, this functionality is available directly from the Azure platform, without the need for a custom solution. In addition, the customer can use Azure Automation runbooks or custom Azure PowerShell and Azure CLI scripts to start Azure VMs on as needed basis.
+    **Potential Answer:** Yes, this functionality is available directly from the Azure platform without the need for a custom solution. In addition, the customer can use Azure Automation runbooks or custom Azure PowerShell and Azure CLI scripts to start Azure VMs on as-needed basis.
 
 ## Customer quote (to be read back to the attendees at the end)
 
