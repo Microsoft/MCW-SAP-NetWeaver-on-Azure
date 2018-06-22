@@ -86,7 +86,7 @@ As the result, agility of the organization is hampered by capital expenditures a
 
 The production app tier consists of three physical servers, each with 8 CPU cores and 32GB RAM. The production database tier is hosted on a single physical server with the same hardware configuration. The average performance of the application tier and the database tier is about 30,000 SAPS and 15,000 SAPS, respectively. The production SAP database workload generates about 10,000 IOPS. The current production DB size is 750GB. According to the estimates of the Contoso SAP team, the database is bound to grow to about 1TB in the next few years. In case of a disaster affecting the production instance, the business expects the RPO and RTO of 15 minutes and 6 hours, respectively. The database transaction log backup should be performed very 15 minutes, with one full daily backup. Daily full backups must be retained for 1 month and monthly full backups for 1 year.
 
-**Customer Objectives**
+**Customer objectives**
 
 As Andrew Cross, the company's CIO wants to significantly improve times it takes to provision development and test SAP environments. At the same time, he stresses the importance of minimizing their cost. He also points out the criticality of the SAP production workloads and the need of protecting them against unplanned downtime. As he stated, "The existing on-premises SAP development and test environments no longer meet the agility required by the fast pace of changes in our business. In addition, our operational dependencies on SAP applications force us to seek reasonably priced availability and disaster recovery capabilities for our production SAP deployments."
 
@@ -106,7 +106,7 @@ Contoso CIO and the company CFO, along with Business Development Manager (BDM), 
 
 -   Identify an estimated monthly infrastructure cost for operating your solution
 
-### Technical Requirements
+### Technical requirements
 
 -   SAP ERP/ECC 6.0 NetWeaver is the application tier
 
@@ -235,9 +235,9 @@ Make sure that your design covers the following items:
 
 Directions: With all participants at your table: 
 
-1.  Identify any customer needs that are not addressed with the proposed solution. 
-2.  Identify the benefits of your solution. 
-3.  Determine how you will respond to the customer’s objections. 
+1.  Identify any customer needs that are not addressed with the proposed solution
+2.  Identify the benefits of your solution 
+3.  Determine how you will respond to the customer’s objections 
 
 Prepare a 15-minute chalk-talk style presentation to the customer. 
 
@@ -253,13 +253,13 @@ Time frame: 30 minutes
 
 Directions:
 
-1.  Pair with another table.
-2.  One table is the Microsoft team and the other table is the customer.
-3.  The Microsoft team presents their proposed solution to the customer.
-4.  The customer makes one of the objections from the list of objections.
-5.  The Microsoft team responds to the objection.
-6.  The customer team gives feedback to the Microsoft team. 
-7.  Tables switch roles and repeat Steps 2–6.
+1.  Pair with another table
+2.  One table is the Microsoft team and the other table is the customer
+3.  The Microsoft team presents their proposed solution to the customer
+4.  The customer makes one of the objections from the list of objections
+5.  The Microsoft team responds to the objection
+6.  The customer team gives feedback to the Microsoft team 
+7.  Tables switch roles and repeat Steps 2–6
 
 
 
@@ -267,7 +267,7 @@ Directions:
 
 Time frame: 15 minutes
 
--   Tables reconvene with the larger group to hear a SME share the preferred solution for the case study
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ### Additional references 
 
