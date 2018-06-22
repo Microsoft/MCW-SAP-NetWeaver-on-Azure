@@ -36,7 +36,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study)
         - [Customer situation](#customer-situation)
         - [Customer needs](#customer-needs)
-        - [Technical Requirements](#technical-requirements)
+        - [Technical requirements](#technical-requirements)
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
@@ -207,7 +207,7 @@ As the result, agility of the organization is hampered by capital expenditures a
 
 The production app tier consists of three physical servers, each with 8 CPU cores and 32GB RAM. The production database tier is hosted on a single physical server with the same hardware configuration. The average performance of the application tier and the database tier is about 30,000 SAPS and 15,000 SAPS, respectively. The production SAP database workload generates about 10,000 IOPS. The current production DB size is 750GB. According to the estimates of the Contoso SAP team, the database is bound to grow to about 1TB in the next few years. In case of a disaster affecting the production instance, the business expects the RPO and RTO of 15 minutes and 6 hours, respectively. The database transaction log backup should be performed very 15 minutes, with one full daily backup. Daily full backups must be retained for 1 month and monthly full backups for 1 year.
 
-**Customer Objectives**
+**Customer objectives**
 
 As Andrew Cross, the company's CIO wants to significantly improve times it takes to provision development and test SAP environments. At the same time, he stresses the importance of minimizing their cost. He also points out the criticality of the SAP production workloads and the need of protecting them against unplanned downtime. As he stated, "The existing on-premises SAP development and test environments no longer meet the agility required by the fast pace of changes in our business. In addition, our operational dependencies on SAP applications force us to seek reasonably priced availability and disaster recovery capabilities for our production SAP deployments."
 
@@ -227,7 +227,7 @@ Contoso CIO and the company CFO, along with Business Development Manager (BDM), 
 
 -   Identify an estimated monthly infrastructure cost for operating your solution
 
-### Technical Requirements
+### Technical requirements
 
 -   SAP ERP/ECC 6.0 NetWeaver is the application tier
 
@@ -374,7 +374,7 @@ Time frame: 30 minutes
 
 Directions:
 
-1.  Pair with another table.
+1.  Pair with another table
 2.  One table is the Microsoft team and the other table is the customer
 3.  The Microsoft team presents their proposed solution to the customer
 4.  The customer makes one of the objections from the list of objections
