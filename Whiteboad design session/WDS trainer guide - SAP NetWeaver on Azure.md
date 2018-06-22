@@ -126,7 +126,7 @@ Outcome: Present solution to your customer
 
 **Wrap-up (15 minutes)**
 
-Directions: Tables reconvene with the larger group to hear the facilitator/sme share the preferred solution for the case study.
+Directions: Tables reconvene with the larger group to hear the facilitator/SME share the preferred solution for the case study.
 
 ## Before the whiteboard design session: How to prepare
 
