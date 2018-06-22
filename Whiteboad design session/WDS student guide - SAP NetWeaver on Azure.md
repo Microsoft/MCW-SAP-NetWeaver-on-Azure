@@ -35,11 +35,11 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Customer objections](#customer-objections)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
-        - [*Architecting network connectivity*](#architecting-network-connectivity)
-        - [*Architecting (ASCS) components*](#architecting-ascs-components)
-        - [*Architecting application components*](#architecting-application-components)
-        - [*Architecting database components*](#architecting-database-components)
-        - [*Determining estimated cost of the solution*](#determining-estimated-cost-of-the-solution)
+        - [Architecting network connectivity](#architecting-network-connectivity)
+        - [Architecting (ASCS) components](#architecting-ascs-components)
+        - [Architecting application components](#architecting-application-components)
+        - [Architecting database components](#architecting-database-components)
+        - [Determining estimated cost of the solution](#determining-estimated-cost-of-the-solution)
     - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
         - [Additional references](#additional-references)
@@ -66,7 +66,7 @@ Attendees will be better able to deploy SAP on Azure infrastructure components a
 
 Analyze your customer’s needs.
 
-Time frame: 15 minutes 
+Timeframe: 15 minutes 
 
 Directions: With all participants in the session, the facilitator/SME presents an overview of the customer case study along with technical tips. 
 
@@ -145,7 +145,7 @@ Contoso CIO and the company CFO, along with Business Development Manager (BDM), 
 **Outcome** 
 Design a solution and prepare to present the solution to the target customer audience in a 15-minute chalk-talk format. 
 
-Time frame: 60 minutes
+Timeframe: 60 minutes
 
 **Business needs**
 
@@ -247,7 +247,7 @@ Prepare a 15-minute chalk-talk style presentation to the customer.
  
 Present a solution to the target customer audience in a 15-minute chalk-talk format.
 
-Time frame: 30 minutes
+Timeframe: 30 minutes
 
 **Presentation** 
 
