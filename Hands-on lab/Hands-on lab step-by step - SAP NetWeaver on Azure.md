@@ -32,10 +32,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
 - [SAP on Azure hands-on lab step-by-step](#sap-on-azure-hands-on-lab-step-by-step)
     - [Abstract and learning objectives](#abstract-and-learning-objectives)
     - [Overview](#overview)
-    - [Solution Architecture](#solution-architecture)
-    - [Requirements](#requirements)
-    - [Before the hands-on lab](#before-the-hands-on-lab)
-        - [Task 1: Review the relevant Microsoft documentation](#task-1-review-the-relevant-microsoft-documentation)
+    - [Solution architecture](#solution-architecture)
     - [Exercise 1: Deploy the SAP on Azure infrastructure components](#exercise-1-deploy-the-sap-on-azure-infrastructure-components)
         - [Task 1: Deploy Active Directory domain controller VMs](#task-1-deploy-active-directory-domain-controller-vms)
         - [Task 2: Prepare the Azure Virtual Network and Active Directory hosted on Azure VMs for deployment of SAP NetWeaver application and database tier VMs](#task-2-prepare-the-azure-virtual-network-and-active-directory-hosted-on-azure-vms-for-deployment-of-sap-netweaver-application-and-database-tier-vms)
@@ -124,44 +121,6 @@ From the architectural standpoint, the deployment will consist of the following 
 
 To facilitate high-availability on the platform level, each pair of Azure virtual machines (VMs) in each layer will belong to the same managed availability set.
 
-## Requirements
-
--   A Microsoft Azure subscription with at least 36 vCPU available in the Azure region where the lab Azure VMs will reside.
-
-    -   DC VMs -- 2 x DS2\_v2: 2 x 2 vCPUs = 4 vCPUs
-
-    -   S2D VMs -- 2 x DS3\_v2: 2 x 4 vCPUs = 8 vCPUs
-
-    -   ASCS VMs -- 2 x DS2\_v2: 2 x 2 vCPUs = 4 vCPUs
-
-    -   DB VMs -- 2 x DS4\_v2: 2 x 8 vCPUs = 16 vCPUs
-
-    -   APP VMs -- 2 x DS2\_v2: 2 x 2 vCPUs = 4 vCPUs
-
--   A lab computer running Windows 7 or newer and configured with:
-
-    -   Azure PowerShell (AzureRM module version 5.7.0 or newer)
-
--   Access to SAP Software Provisioning Manager (SWPM) version SPS21 or newer (requires an SAP Online Service System account)
-
--   Access to NTCLUST.SAR including the current SAP cluster resource DLL (requires an SAP Online Service System account)
-
--   Access to Internet from the lab VMs
-
-## Before the hands-on lab
-
-Duration: 30 minutes
-
-Review the relevant Microsoft documentation.
-
-### Task 1: Review the relevant Microsoft documentation 
-
-1.  Review to the documentation regarding highly available deployments of SAP NetWeaver on Azure at <https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/sap-high-availability-architecture-scenarios>.
-
-2.  Review the documentation regarding Azure PowerShell at <https://docs.microsoft.com/en-us/powershell/azure/get-started-azureps?view=azurermps-5.7.0>.
-
-You should follow all steps provided *before* attending the hands-on lab.
-
 ## Exercise 1: Deploy the SAP on Azure infrastructure components 
 
 Duration: 130 minutes
@@ -180,13 +139,13 @@ In this task, you will deploy two Azure VMs hosting Active Directory domain cont
 
 -   Domain Name: **contoso.com**
 
-1.  From the lab computer, start a Web browser, and navigate to the Azure portal at <https://portal.azure.com>.
+1.  From the lab computer, start a Web browser, and navigate to the Azure portal at <https://portal.azure.com>
 
-2.  When prompted, sign in to the Azure subscription you will be using in this lab.
+2.  When prompted, sign in to the Azure subscription you will be using in this lab
 
-3.  From the lab computer, start another instance of the Web browser, and navigate to <https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc>.
+3.  From the lab computer, start another instance of the Web browser, and navigate to <https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc>
 
-4.  On the **Create 2 new Windows VMs, create a new AD Forest, Domain and 2 DCs in an availability set** page, and select **Deploy to Azure **
+4.  On the **Create 2 new Windows VMs, create a new AD Forest, Domain and 2 DCs in an availability set** page, and select **Deploy to Azure**
 
 5.  The Web browser window should automatically be redirected to the Azure portal, and display the **Create a new AD Domain with 2 Domain Controllers** blade.
 
@@ -214,7 +173,7 @@ In this task, you will deploy two Azure VMs hosting Active Directory domain cont
 
     -   \_artifacts Location Sas Token: *Leave blank*
 
-7.  Enable the checkbox labeled **I agree to the terms and conditions stated above**, and select **Purchase**.
+7.  Enable the checkbox labeled **I agree to the terms and conditions stated above**, and select **Purchase**
 
 8.  Wait for the deployment to complete. This might take about 30 minutes.
 
@@ -250,25 +209,25 @@ In this task, you will configure Azure Virtual Network and Active Directory host
 
         -   **s03-db-1-sqlsvc**: you will use this account to configure SQL Server 2016 services on the second SQL Server VM
 
-1.  In the Azure portal, navigate to the newly created resource group.
+1.  In the Azure portal, navigate to the newly created resource group
 
-2.  In the Overview section, in the list of resource group resources, select **adVNET**.
+2.  In the Overview section, in the list of resource group resources, select **adVNET**
 
-3.  On the **adVNET** blade, select **Subnets**.
+3.  On the **adVNET** blade, select **Subnets**
 
-4.  From the **adVNET -- Subnets** blade, add a subnet named **sapSubnet** with the IP address range **10.0.1.0/24**, and select **OK**.
+4.  From the **adVNET -- Subnets** blade, add a subnet named **sapSubnet** with the IP address range **10.0.1.0/24**, and select **OK**
 
-5.  From the **adVNET -- Subnets** blade, add a subnet named **s2dSubnet** with the IP address range **10.0.2.0/24**, and select **OK**.
+5.  From the **adVNET -- Subnets** blade, add a subnet named **s2dSubnet** with the IP address range **10.0.2.0/24**, and select **OK**
 
-6.  On the **adVNET** blade, select **DNS servers**.
+6.  On the **adVNET** blade, select **DNS servers**
 
-7.  On the **adVNET -- DNS servers** blade, verify your DNS configuration shows a custom DNS server with the IP addresses of **10.0.0.4 and 10.0.0.5**.
+7.  On the **adVNET -- DNS servers** blade, verify your DNS configuration shows a custom DNS server with the IP addresses of **10.0.0.4 and 10.0.0.5**
 
-8.  In the s03-RG Resource Group Overview section and in the list of resource group resources, select **adPDC**.
+8.  In the s03-RG Resource Group Overview section and in the list of resource group resources, select **adPDC**
 
-9.  On the **adPDC** blade, select **Connect** to connect to the **adPDC** VM via RDP.
+9.  On the **adPDC** blade, select **Connect** to connect to the **adPDC** VM via RDP
 
-10. When prompted, sign in with the Active Directory Domain Admin account credentials (**contoso\\demouser** username and **demo\@pass123** password).
+10. When prompted, sign in with the Active Directory Domain Admin account credentials (**contoso\\demouser** username and **demo\@pass123** password)
 
 11. Once connected to the adPDC VM, start DNS Manager console, **expand adPDC, Forward Lookup Zones, contoso.com**, and create Host (A) records with the following settings:
 
@@ -308,7 +267,7 @@ In this task, you will configure Azure Virtual Network and Active Directory host
     dsac
 ```
 
-13. Create an organizational unit named **s03** directly in the root of the domain.
+13. Create an organizational unit named **s03** directly in the root of the domain
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image7.png)
 
@@ -408,13 +367,13 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 -   \_artifacts Location Sas Token: leave the default value
 
-1.  From the lab computer, start another instance of the Web browser, and navigate to <https://github.com/robotechredmond/301-storage-spaces-direct-md> .
+1.  From the lab computer, start another instance of the Web browser, and navigate to <https://github.com/robotechredmond/301-storage-spaces-direct-md>
 
-2.  On the **Use Managed Disks to Create a Storage Spaces Direct (S2D) Scale-Out File Server (SOFS) Cluster with Windows Server 2016** page, select **Deploy to Azure**.
+2.  On the **Use Managed Disks to Create a Storage Spaces Direct (S2D) Scale-Out File Server (SOFS) Cluster with Windows Server 2016** page, select **Deploy to Azure**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image8.png)
 
-3.  The Web browser window should automatically get redirected to the Azure portal and display the **Custom deployment** blade.
+3.  The Web browser window should automatically get redirected to the Azure portal and display the **Custom deployment** blade
 
 4.  On the **Custom deployment** blade, specify the following settings:
 
@@ -470,7 +429,7 @@ In this task, you will deploy the scale-out file server (SOFS) cluster that will
 
 -   \_artifacts Location Sas Token: leave the default value
 
-5.  Enable the checkbox labeled **I agree to the terms and conditions stated above**, and select **Purchase**.
+5.  Enable the checkbox labeled **I agree to the terms and conditions stated above**, and select **Purchase**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image9.png)
 
@@ -522,19 +481,19 @@ In this task, you will deploy additional Azure VMs that will be hosting your SAP
 
 -   Health Probe port of s03-lb-db load balancer: **59999**
 
-8.  From the lab computer, start another instance of the Web browser, and navigate to <https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-md>.
+8.  From the lab computer, start another instance of the Web browser, and navigate to <https://github.com/Azure/azure-quickstart-templates/tree/master/sap-3-tier-marketplace-image-md>
 
-9.  On the **SAP NetWeaver 3-tier compatible template using a Marketplace image - MD** page, select **Deploy to Azure**.
+9.  On the **SAP NetWeaver 3-tier compatible template using a Marketplace image - MD** page, select **Deploy to Azure**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image12.png)
 
-10. The Web browser window should automatically get redirected to the Azure portal and display the **SAP NW 3-tier (managed disk)** blade.
+10. The Web browser window should automatically get redirected to the Azure portal and display the **SAP NW 3-tier (managed disk)** blade
 
-11. Select **Edit template**.
+11. Select **Edit template**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image13.png)
 
-12. On the **Edit template** blade, expand the **Variables** node, and scroll down to the **vmSizes** subnode.
+12. On the **Edit template** blade, expand the **Variables** node, and scroll down to the **vmSizes** subnode
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image14.png)
 
@@ -542,7 +501,7 @@ In this task, you will deploy additional Azure VMs that will be hosting your SAP
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image15.png)
 
-14. Select **Save** to save your changes.
+14. Select **Save** to save your changes
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image16.png)
 
@@ -580,7 +539,7 @@ In this task, you will deploy additional Azure VMs that will be hosting your SAP
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image17.png)
 
-16. Enable the checkbox labeled **I agree to the terms and conditions stated above**, and select **Purchase**.
+16. Enable the checkbox labeled **I agree to the terms and conditions stated above**, and select **Purchase**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image9.png)
 
@@ -594,7 +553,7 @@ In this task, you will deploy additional Azure VMs that will be hosting your SAP
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image19.png)
 
-19. Change the value of **Port** from **62000** to **3900**, and select **Save**.
+19. Change the value of **Port** from **62000** to **3900**, and select **Save**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image20.png)
 
@@ -602,7 +561,7 @@ In this task, you will deploy additional Azure VMs that will be hosting your SAP
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image21.png)
 
-21. Change the value of **Port** from **62503** to **59999**, and select **Save**.
+21. Change the value of **Port** from **62503** to **59999**, and select **Save**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image22.png)
 
@@ -610,7 +569,7 @@ In this task, you will deploy additional Azure VMs that will be hosting your SAP
 
 In this exercise, you will configure Public and Private IP addressing for the Azure VMs and internal load balancers deployed in the previous task by using an Azure Resource Manager template. You will assign to each VM a designated, static Private IP address and a dynamic Public IP address. You will also assign a designated, static Private IP address to each load balancer.
 
-Note: At this point, each of the Azure VMs we have deployed in the previous task has a dynamically assigned Private IP address and no Public IP address. The lack of Public IP addresses is the result of using the SAP NW 3-tier compatible Marketplace image template which is intended to work this way when deploying it into an existing Azure Virtual Network. When operating in a production environment, you should connect to VMs via their Private IP address (e.g. by leveraging an existing Site-to-Site VPN or ExpressRoute from an on-premises location). You will add a Public IP to each VM in order to simplify the setup process. We will also assign a designated static Private IP address to each VM and each internal load balancer in order to be able to reference specific IP addresses throughout this lab.
+**Note:** At this point, each of the Azure VMs we have deployed in the previous task has a dynamically assigned Private IP address and no Public IP address. The lack of Public IP addresses is the result of using the SAP NW 3-tier compatible Marketplace image template which is intended to work this way when deploying it into an existing Azure Virtual Network. When operating in a production environment, you should connect to VMs via their Private IP address (e.g. by leveraging an existing Site-to-Site VPN or ExpressRoute from an on-premises location). You will add a Public IP to each VM in order to simplify the setup process. We will also assign a designated static Private IP address to each VM and each internal load balancer in order to be able to reference specific IP addresses throughout this lab.
 
 Configure the Private IP addresses of VMs and load balancers in the following manner:
 
@@ -630,7 +589,7 @@ Configure the Private IP addresses of VMs and load balancers in the following ma
 
 -   s03-lb-ascs: 10.0.1.6
 
-1.  From the lab computer, start a Windows PowerShell ISE window as Administrator.
+1.  From the lab computer, start a Windows PowerShell ISE window as Administrator
 
 2.  In the Script pane, type the following script, and press F5 to execute it. When prompted to sign in after typing the first command, type in the credentials you used to authenticate your Azure subscription. 
 
@@ -688,7 +647,7 @@ Configure the Private IP addresses of VMs and load balancers in the following ma
 
 In this task, you will join all of the Windows Server 2016 Azure VMs that will be hosting your SAP implementation to the Active Directory domain contoso.com.
 
-1.  From the lab computer, start a Windows PowerShell ISE window as an Administrator.
+1.  From the lab computer, start a Windows PowerShell ISE window as an Administrator
 
 2.  In the Script pane, type the following script, and press F5 to execute it. When prompted to sign in after typing the first command, type in the credentials you used to authenticate to your Azure subscription
 
@@ -730,7 +689,7 @@ In this task, you will disable User Account Control on the Windows Server 2016 A
     Invoke-Command $vmNames {Set-ItemProperty -Path REGISTRY::HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Policies\System -Name EnableLUA -Value 0}
 ```
 
-3.  After the script completes, restart all servers.
+3.  After the script completes, restart all servers
 
 ### Summary
 
@@ -822,15 +781,15 @@ Account for the fact you will be using the virtual names, and configure the foll
 
     -   Set DisableStrictNameChecking to 1
 
-1.  Start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media.
+1.  Start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image23.png)
 
-2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>Distributed System-\>ASCS/SCS Instance**, and select **Next**.
+2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>Distributed System-\>ASCS/SCS Instance**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image24.png)
 
-3.  On the **Parameter Settings** page, select **Custom** and then select **Next**.
+3.  On the **Parameter Settings** page, select **Custom** and then select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image25.png)
 
@@ -842,31 +801,31 @@ Account for the fact you will be using the virtual names, and configure the foll
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image27.png)
 
-6.  On the **DNS Domain Name** page, accept the default settings, and select **Next**.
+6.  On the **DNS Domain Name** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image28.png)
 
-7.  On the **Master Password** page, in the **Password for All Users** and **Confirm** text boxes, type **demo\@pass123** and select **Next**.
+7.  On the **Master Password** page, in the **Password for All Users** and **Confirm** text boxes, type **demo\@pass123** and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image29.png)
 
-8.  On the **Windows Domain** page, accept the default settings and select **Next**.
+8.  On the **Windows Domain** page, accept the default settings and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image30.png)
 
-9.  On the **Windows Domain \> Organizational Units** page, set **OU Path** to **S03**, and select **Next**.
+9.  On the **Windows Domain \> Organizational Units** page, set **OU Path** to **S03**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image31.png)
 
-10. On the **Software Package Browser** page, point to **SAP\\Kernel\_51050826\_10\\DATA\_UNITS\\K\_745\_U\_WINDOWS\_X86\_64**, and select **Next**.
+10. On the **Software Package Browser** page, point to **SAP\\Kernel\_51050826\_10\\DATA\_UNITS\\K\_745\_U\_WINDOWS\_X86\_64**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image32.png)
 
-11. Select **Next** again once the location of the software packages has been identified.
+11. Select **Next** again once the location of the software packages has been identified
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image33.png)
 
-12. On the **Prerequisites Checker Results** page, identify the missing prerequisites.
+12. On the **Prerequisites Checker Results** page, identify the missing prerequisites
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image34.png)
 
@@ -914,39 +873,39 @@ Account for the fact you will be using the virtual names, and configure the foll
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image35.png)
 
-16. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**.
+16. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image36.png)
 
-17. On the **Operating System Users** page, type **demo\@pass123** as the password, and select **Next**.
+17. On the **Operating System Users** page, type **demo\@pass123** as the password, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image37.png)
 
-18. On the **ASCS Instance** page, accept the default settings, and select **Next**.
+18. On the **ASCS Instance** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image38.png)
 
-19. On the **ABAP Message Server Ports** page, accept the default settings, and select **Next**.
+19. On the **ABAP Message Server Ports** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image39.png)
 
-20. On the **Additional Components to be Included in the ASCS Instance** page, select the checkbox **Install SAP Web Dispatcher integrated**, and then select **Next**.
+20. On the **Additional Components to be Included in the ASCS Instance** page, select the checkbox **Install SAP Web Dispatcher integrated**, and then select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image40.png)
 
-21. On the **SAP Web Dispatcher Parameters** page, set the Encryption Mode to **Never**, and select **Next**.
+21. On the **SAP Web Dispatcher Parameters** page, set the Encryption Mode to **Never**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image41.png)
 
-22. On the **ICM User Management for the SAP Web Dispatcher** page, set the password of webadm to **demo\@pass123**, and select **Next**.
+22. On the **ICM User Management for the SAP Web Dispatcher** page, set the password of webadm to **demo\@pass123**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image42.png)
 
-23. On the **Parameter Summary** page, select **Next**.
+23. On the **Parameter Summary** page, select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image43.png)
 
-24. Monitor progress of installation on the **Task Progress** page.
+24. Monitor progress of installation on the **Task Progress** page
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image44.png)
 
@@ -980,19 +939,19 @@ In this task, you will use SAP Software Provisioning Manager to carry out the di
 
 -   Set all passwords to **demo\@pass123**
 
-1.  Start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media.
+1.  Start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image23.png)
 
-2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>Distributed System-\>ASCS/SCS Instance**, and select **Next**.
+2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>Distributed System-\>ASCS/SCS Instance**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image46.png)
 
-3.  On the **Parameter Settings** page, select **Custom** and then select **Next**.
+3.  On the **Parameter Settings** page, select **Custom** and then select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image47.png)
 
-4.  When prompted, select **OK**. You will be automatically logged off. Log back on by using the same user credentials (**CONTOSO\\s03-su**)
+4.  When prompted, select **OK**. You will be automatically logged off. Log back on by using the same user credentials (**CONTOSO\\s03-su**).
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image48.png)
 
@@ -1000,31 +959,31 @@ In this task, you will use SAP Software Provisioning Manager to carry out the di
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image49.png)
 
-6.  On the **DNS Domain Name** page, accept the default settings, and select **Next**.
+6.  On the **DNS Domain Name** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image50.png)
 
-7.  On the **Master Password** page, in the **Password for All Users** and **Confirm** text boxes, type **demo\@pass123** and select **Next**.
+7.  On the **Master Password** page, in the **Password for All Users** and **Confirm** text boxes, type **demo\@pass123** and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image51.png)
 
-8.  On the **Windows Domain** page, accept the default settings and select **Next**.
+8.  On the **Windows Domain** page, accept the default settings and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image52.png)
 
-9.  On the **Windows Domain \> Organizational Units** page, set **OU Path** to **S03**, and select **Next**.
+9.  On the **Windows Domain \> Organizational Units** page, set **OU Path** to **S03**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image53.png)
 
-10. On the **Software Package Browser** page, point to **SAP\\Kernel\_51050826\_10\\DATA\_UNITS\\K\_745\_U\_WINDOWS\_X86\_64**, and select **Next**.
+10. On the **Software Package Browser** page, point to **SAP\\Kernel\_51050826\_10\\DATA\_UNITS\\K\_745\_U\_WINDOWS\_X86\_64**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image54.png)
 
-11. Select **Next** again once the location of the software packages has been identified.
+11. Select **Next** again once the location of the software packages has been identified
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image55.png)
 
-12. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**.
+12. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image56.png)
 
@@ -1032,31 +991,31 @@ In this task, you will use SAP Software Provisioning Manager to carry out the di
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image57.png)
 
-14. On the **ASCS Instance** page, accept the default settings, and select **Next**.
+14. On the **ASCS Instance** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image58.png)
 
-15. On the **ABAP Message Server Ports** page, accept the default settings, and select **Next**.
+15. On the **ABAP Message Server Ports** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image59.png)
 
-16. On the **Additional Components to be Included in the ASCS Instance** page, select the checkbox **Install SAP Web Dispatcher integrated**, and select **Next**.
+16. On the **Additional Components to be Included in the ASCS Instance** page, select the checkbox **Install SAP Web Dispatcher integrated**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image60.png)
 
-17. On the **SAP Web Dispatcher Parameters** page, set the Encryption Mode to **Never**, and select **Next**.
+17. On the **SAP Web Dispatcher Parameters** page, set the Encryption Mode to **Never**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image61.png)
 
-18. On the **ICM User Management for the SAP Web Dispatcher** page, set the password of webadm to **demo\@pass123**, and select **Next**.
+18. On the **ICM User Management for the SAP Web Dispatcher** page, set the password of webadm to **demo\@pass123**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image62.png)
 
-19. On the **Parameter Summary** page, select **Next**.
+19. On the **Parameter Summary** page, select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image63.png)
 
-20. Monitor the progress of the installation on the **Task Progress** page.
+20. Monitor the progress of the installation on the **Task Progress** page
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image64.png)
 
@@ -1068,27 +1027,27 @@ In this task, you will use SAP Software Provisioning Manager to carry out the di
 
 In this task, you will configure the ASCS cluster with the sapmnt share hosted on the SOFS you installed in the previous exercise. To accomplish this, you will follow the procedure documented at <https://docs.microsoft.com/en-us/azure/virtual-machines/workloads/sap/sap-high-availability-installation-wsfc-file-share>
 
-1.  From the RDP session to s03-ascs-1, start **SAP Management Console**.
+1.  From the RDP session to s03-ascs-1, start **SAP Management Console**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image66.png)
 
-2.  From the SAP Management Console, right-click the **s03-ascs-1 0** node and select **Stop**.
+2.  From the SAP Management Console, right-click the **s03-ascs-1 0** node and select **Stop**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image67.png)
 
-3.  In the **SAP Instance Shutdown** dialog box, accept the default options and select **OK**.
+3.  In the **SAP Instance Shutdown** dialog box, accept the default options and select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image68.png)
 
-4.  When prompted to authenticate, in the **Password** text box, type **demo\@pass123** and select **OK**.
+4.  When prompted to authenticate, in the **Password** text box, type **demo\@pass123** and select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image69.png)
 
-5.  Use Server Manager on s03-ascs-0 to stop the ASCS Windows service SAPS03\_00 on s03-ascs-1.
+5.  Use Server Manager on s03-ascs-0 to stop the ASCS Windows service SAPS03\_00 on s03-ascs-1
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image70.png)
 
-6.  Switch to the RDP session to s03-ascs-0 and repeat the steps 2-5.
+6.  Switch to the RDP session to s03-ascs-0 and repeat the steps 2-5
 
 7.  To remove the SAPMNT file share on both ASCS cluster nodes, switch back to the Remote Desktop session to s03-ascs-0 and from the Windows PowerShell ISE window, run the following:
 
@@ -1154,7 +1113,7 @@ In this task, you will configure the ASCS cluster with the sapmnt share hosted o
     robocopy U:\usr\sap\S03\SYS \\sapglobalhost\sapmnt\S03\SYS /e /r:1 /w:1
 ```
 
-11. From the Command Prompt on s03-ascs-0, run the following delete the U:\\usr\\sap\\SYS folder from both ASCS cluster nodes.
+11. From the Command Prompt on s03-ascs-0, run the following delete the U:\\usr\\sap\\SYS folder from both ASCS cluster nodes:
 
 ```
     rd U:\usr\sap\S03\SYS /s /q
@@ -1173,7 +1132,7 @@ In this task, you will configure the ASCS cluster with the sapmnt share hosted o
 
 13. To update instance profiles to reference the virtual name of the ASCS cluster, from s03-ascs-0, start Internet Explorer and navigate to <https://github.com/Azure-Samples/sap-powershell> . On the **SAP PowerShell Scripts** page, select **SAPScripts.psm1** and then select **Raw**.
 
-14. Copy the content of the web page into Clipboard.
+14. Copy the content of the web page into Clipboard
 
 15. From the Windows PowerShell ISE window on s03-ascs-0, run the following (make sure that when you invoke the script, Clipboard contains copy of the SAPScripts.psm1 module):
 
@@ -1199,7 +1158,7 @@ In this task, you will configure the ASCS cluster with the sapmnt share hosted o
 
 17. To install the updated saprc.dll file, use the following steps:
 
-    a.  Download the latest NTCLUST.SAR package from the SAP Service Marketplace to the Downloads folder on s03-ascs-0.
+    a.  Download the latest NTCLUST.SAR package from the SAP Service Marketplace to the Downloads folder on s03-ascs-0
 
     b.  From the Downloads folder on s03-ascs-0, unpack NTCLUS.SAR
 
@@ -1248,7 +1207,7 @@ In this task, you will configure the ASCS cluster with the sapmnt share hosted o
     Start-ClusterGroup -Name $SAPClusterGroupName -Verbose
 ```
 
-19. From s03-ascs-0, start Failover Cluster Manager and verify that the s03-ascs-v0 resource is online.
+19. From s03-ascs-0, start Failover Cluster Manager and verify that the s03-ascs-v0 resource is online
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image71.png)
 
@@ -1262,11 +1221,11 @@ In this task, you will configure the ASCS cluster with the sapmnt share hosted o
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image72.png)
 
-22. Ensure that you get the confirmation that the service was successfully installed and select **OK**.
+22. Ensure that you get the confirmation that the service was successfully installed and select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image73.png)
 
-23. Repeat the steps 20-22 on s03-ascs-1.
+23. Repeat the steps 20-22 on s03-ascs-1
 
 24. To finalize configuration of the SAP S03 cluster group, create the SAP S03 00 service and the corresponding instance by running the following from the PowerShell ISE window on s03-ascs-0:
 
@@ -1299,29 +1258,29 @@ In this task, you will configure the ASCS cluster with the sapmnt share hosted o
     Set-ClusterResourceDependency -Resource $SAPASCSServiceClusterResource  -Dependency "[$SAPServiceClusterResourceName]" -Verbose
 ```
 
-25. To install an instance of the Enqueue Replication Server (ERS) on s03-ascs-0, start SAP Software Provisioning Manager by double-clicking sapinst.exe in the swpm folder in the source media.
+25. To install an instance of the Enqueue Replication Server (ERS) on s03-ascs-0, start SAP Software Provisioning Manager by double-clicking sapinst.exe in the swpm folder in the source media
 
-26. On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>Additional SAP System Instances-\>Enqueue Replication Server Instance**, and select **Next**.
+26. On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>Additional SAP System Instances-\>Enqueue Replication Server Instance**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image74.png)
 
-27. On the **General SAP System Parameters** page, accept the default settings and select **Next**.
+27. On the **General SAP System Parameters** page, accept the default settings and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image75.png)
 
-28. On the **Operating System Users** page, provide the password **demo\@pass123** for the **CONTOSO\\s03adm** and **CONTOSO\\SAPServiceS03** accounts and select **Next**.
+28. On the **Operating System Users** page, provide the password **demo\@pass123** for the **CONTOSO\\s03adm** and **CONTOSO\\SAPServiceS03** accounts and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image76.png)
 
-29. On the **Software Package Browser** page, set the **PackagePath** to the location of the **SAPHostAgent\_721** files and select **Next**.
+29. On the **Software Package Browser** page, set the **PackagePath** to the location of the **SAPHostAgent\_721** files and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image77.png)
 
-30. On the **Software Package Browser** page, verify that the status of the missing package changes to available and select **Next**.
+30. On the **Software Package Browser** page, verify that the status of the missing package changes to available and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image78.png)
 
-31. On the **Enqueue Replication Server Instance** page, accept the default settings and select **Next**.
+31. On the **Enqueue Replication Server Instance** page, accept the default settings and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image79.png)
 
@@ -1329,7 +1288,7 @@ In this task, you will configure the ASCS cluster with the sapmnt share hosted o
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image80.png)
 
-33. On the **Parameter Summary** page, select **Next**.
+33. On the **Parameter Summary** page, select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image81.png)
 
@@ -1337,11 +1296,11 @@ In this task, you will configure the ASCS cluster with the sapmnt share hosted o
 
 35. Repeat the steps 25-34 on s03-ascs-1. Set the name of the ERS instance to **s03-ascs-ers1**.
 
-26. Verify the Failover Cluster is operational by viewing the **SAP S03** role in the **Failover Cluster Manager** console.
+26. Verify the Failover Cluster is operational by viewing the **SAP S03** role in the **Failover Cluster Manager** console
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image82.png)
 
-27. On s03-ascs-0, in the SAP Management Console, verify the SAP deployment is operational.
+27. On s03-ascs-0, in the SAP Management Console, verify the SAP deployment is operational
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image83.png)
 
@@ -1361,15 +1320,15 @@ In this exercise, you will configure the SAP NetWeaver database servers. You wil
 
 In this task, you will configure the Azure VMs for the database layer by attaching an extra Premium 512 GB data disk to each of them (the template-based deployment resulted in one disk of 128 GB in size already attached to every Azure VM within that deployment). Set the host caching on the 128 GB disk to **None** (since this disk will be used to host logs) and on the 512 GB disk to **Read**-**only** (since this disk will be used to host data files). To configure a Cloud Witness for the database cluster, you will use the same storage account you created in the second exercise when deploying the SAP Azure infrastructure components, so there is no need to create another storage account for this purpose.
 
-1.  From the Azure portal, navigate to the **s03-db-0** VM blade, and select **Disks**.
+1.  From the Azure portal, navigate to the **s03-db-0** VM blade, and select **Disks**
 
-2.  From the **s03-db-0 - Disks** blade, add a 512 GB Premium managed data disk.
+2.  From the **s03-db-0 - Disks** blade, add a 512 GB Premium managed data disk
 
-3.  Set **Host caching** to **Read-only**.
+3.  Set **Host caching** to **Read-only**
 
-4.  Repeat steps from 1-3 for **s03-db-1**.
+4.  Repeat steps from 1-3 for **s03-db-1**
 
-### Task 2: Grant elevated user rights to the SQL Server service account.
+### Task 2: Grant elevated user rights to the SQL Server service account
 
 In this task, you will use Group Policy to grant the following user rights to the SQL Server service account (**s03-db-0-sqlsvc** and **s03-db-1-sqlsvc**) on the Window Server 2016 computers hosting their respective SQL Server instances.
 
@@ -1383,25 +1342,25 @@ In a production deployment, you should consider using domain-based Group Policy 
 
 1.  Navigate to the **s03-db-0** VM blade in the Azure portal, and use the **Connect** icon in the toolbar to establish an RDP session to that VM. When prompted to authenticate, sign in with the **CONTOSO\\s03-su** user account you created in the first exercise.
 
-2.  Within the RDP session to s03-db-0 VM, start Group Policy Editor from the Tools menu in Server Manager.
+2.  Within the RDP session to s03-db-0 VM, start Group Policy Editor from the Tools menu in Server Manager
 
-3.  In the left pane of the Group Policy Editor console, expand **Local Computer Policy -\> Computer Configuration -\> Windows Settings -\> Security Settings -\> Local Policies**, and then select **User Rights Assignment**.
+3.  In the left pane of the Group Policy Editor console, expand **Local Computer Policy -\> Computer Configuration -\> Windows Settings -\> Security Settings -\> Local Policies**, and then select **User Rights Assignment**
 
-4.  In the right pane, double-click **Perform volume maintenance tasks**.
+4.  In the right pane, double-click **Perform volume maintenance tasks**
 
-5.  In the **Perform volume maintenance tasks Properties** window, select **Add User or Group**.
+5.  In the **Perform volume maintenance tasks Properties** window, select **Add User or Group**
 
-6.  In the **Select Users or Groups** dialog box, type **CONTOSO\\s03-db-0-sqlsvc** and select **OK** twice.
+6.  In the **Select Users or Groups** dialog box, type **CONTOSO\\s03-db-0-sqlsvc** and select **OK** twice
 
-7.  Back in the Group Policy Editor console, in the right pane, double-click **Lock pages in memory**.
+7.  Back in the Group Policy Editor console, in the right pane, double-click **Lock pages in memory**
 
-8.  In the **Lock pages in memory Properties** window, select **Add User or Group**.
+8.  In the **Lock pages in memory Properties** window, select **Add User or Group**
 
-9.  In the **Select Users or Groups** dialog box, type **CONTOSO\\s03-db-0-sqlsvc** and select **OK** twice.
+9.  In the **Select Users or Groups** dialog box, type **CONTOSO\\s03-db-0-sqlsvc** and select **OK** twice
 
-10. Restart **s03-db-0**.
+10. Restart **s03-db-0**
 
-11. Repeat steps 1-10 on s03-db-1, but this time assign both user rights to **CONTOSO\\s03-db-1-sqlsvc**.
+11. Repeat steps 1-10 on s03-db-1, but this time assign both user rights to **CONTOSO\\s03-db-1-sqlsvc**
 
 ### Task 3: Install SQL Server 2016 with the SQL\_Latin1\_General\_CP850\_BIN2 collation
 
@@ -1443,7 +1402,7 @@ In this task, you will configure operating system on s03-db-0 and s03-db-1, and 
 
 -   Data Directories:
 
-    -   **Data root directory: C:\\Program Files\\Microsoft SQL Ser**ver
+    -   **Data root directory: C:\\Program Files\\Microsoft SQL Server**
 
     -   **User database directory: M:\\Program Files\\Microsoft SQL Server\\MSSQL13.MSSQLSERVER\\MSSQL\\Data**
 
@@ -1455,12 +1414,11 @@ In this task, you will configure operating system on s03-db-0 and s03-db-1, and 
 
     -   **Data directories: M:\\Program Files\\Microsoft SQL Server\\MSSQL13.MSSQLSERVER\\MSSQL\\Data (note that you'll need to create this directory)**
 
-    -   **Log directory: L:\\Program Files\\Microsoft SQL Server\\MSSQL13.MSSQLSERVER\\MSSQL\\Data\
-        **
+    -   **Log directory: L:\\Program Files\\Microsoft SQL Server\\MSSQL13.MSSQLSERVER\\MSSQL\\Data\**
 
-On both s03-db-0 and s03-db-1, download and install SQL Server Management Studio with the default settings.
+    -   **On both s03-db-0 and s03-db-1, download and install SQL Server Management Studio with the default settings**
 
-Copy SAP specific logins from s03-db-0 to s03-db-1 with their existing settings, including the default database and the server role.
+    -   **Copy SAP specific logins from s03-db-0 to s03-db-1 with their existing settings, including the default database and the server role**
 
 12. Navigate to the **s03-db-0** VM blade in the Azure portal, and use the **Connect** icon in the toolbar to establish an RDP session to that VM. When prompted to authenticate, sign in with the **CONTOSO\\s03-su** user account you created in the first exercise.
 
@@ -1474,21 +1432,21 @@ Copy SAP specific logins from s03-db-0 to s03-db-1 with their existing settings,
     Get-Disk -Number 3 | Initialize-Disk -PartitionStyle MBR -PassThru | New-Partition -DriveLetter 'M' -UseMaximumSize | Format-Volume -FileSystem ReFS -NewFileSystemLabel 'Data Disk' -Confirm:$false
 ```
 
-14. Start installation of SQL Server 2016 by selecting **New SQL Server stand-alone installation or add features to an existing installation** in **SQL Server Installation Center**.
+14. Start installation of SQL Server 2016 by selecting **New SQL Server stand-alone installation or add features to an existing installation** in **SQL Server Installation Center**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image84.png)
 
-15. On the Product Key page, accept the default, and select **Next**.
+15. On the Product Key page, accept the default, and select **Next**
 
-16. On the **License Terms**, enable the **I accept the license terms** checkbox, and select **Next**.
+16. On the **License Terms**, enable the **I accept the license terms** checkbox, and select **Next**
 
-17. On the **Microsoft Update** page, ensure the **Use Microsoft Update to check for updates (recommended)** checkbox is enabled, and select **Next**.
+17. On the **Microsoft Update** page, ensure the **Use Microsoft Update to check for updates (recommended)** checkbox is enabled, and select **Next**
 
-18. On the **Product Updates** page, accept the default settings, and select **Next**.
+18. On the **Product Updates** page, accept the default settings, and select **Next**
 
-19. On the **Install Setup Files** page, select **Next**.
+19. On the **Install Setup Files** page, select **Next**
 
-20. On the **Install Rules** page, select **Next**.
+20. On the **Install Rules** page, select **Next**
 
 21. On the **Feature Selection** page, select the following checkboxes:
 
@@ -1496,15 +1454,15 @@ Copy SAP specific logins from s03-db-0 to s03-db-1 with their existing settings,
 
     -   Client Tools Connectivity
 
-        Leave all other settings at their defaults, and select **Next**.
+        Leave all other settings at their defaults, and select **Next**
 
         ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image85.png)
 
-22. On the **Instance Configuration** page, leave the default settings in place, and select **Next**.
+22. On the **Instance Configuration** page, leave the default settings in place, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image86.png)
 
-23. In the **Service Accounts** tab on the **Server Configuration** page, set the account for the SQL Server and SQL Server Agent services to **contoso\\s03-db-0-sqlsvc** with **demo\@pass123** password.
+23. In the **Service Accounts** tab on the **Server Configuration** page, set the account for the SQL Server and SQL Server Agent services to **contoso\\s03-db-0-sqlsvc** with **demo\@pass123** password
 
 24. Switch to the **Collation** tab, and select **Customize**. In the **Customize the SQL Server 2016 Database Engine Collation** window, in the **SQL collation, used for backward compatibility**, select **SQL\_Latin1\_General\_CP850\_BIN2**, and select **OK**. Back on the **Server Configuration** page, select **Next**.
 
@@ -1534,19 +1492,19 @@ Copy SAP specific logins from s03-db-0 to s03-db-1 with their existing settings,
 
         ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image90.png)
 
-28. Back on the **Database Engine Configuration** page, select **Next**.
+28. Back on the **Database Engine Configuration** page, select **Next**
 
-29. On the **Ready to Install** page, select **Install**.
+29. On the **Ready to Install** page, select **Install**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image91.png)
 
-30. On the **Complete** page, select **Close**.
+30. On the **Complete** page, select **Close**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image92.png)
 
-31. On s03-db-0, start Internet Explorer, browse to <https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms>, and download/install the current production release of the SQL Server Management Studio with the default settings.
+31. On s03-db-0, start Internet Explorer, browse to <https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms>, and download/install the current production release of the SQL Server Management Studio with the default settings
 
-32. Repeat steps 1-19 on s03-db-1.
+32. Repeat steps 1-19 on s03-db-1
 
 ### Task 4: Install the SAP database layer
 
@@ -1562,7 +1520,7 @@ In this task, you will install the SAP database instance on s03-db-0 Azure VM by
 
 -   SAP Host Agent User Domain: **Local Domain**
 
--   MS SQL Server Data Files: **4 for small systems **
+-   MS SQL Server Data Files: **4 for small systems**
 
 -   MS SQL Server Database Files:
 
@@ -1582,11 +1540,11 @@ In this task, you will install the SAP database instance on s03-db-0 Azure VM by
 
 -   Set all passwords to **demo\@pass123**
 
-1.  Start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media.
+1.  Start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image23.png)
 
-2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>High Availability System-\>Database Instance**, and select **Next**.
+2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>High Availability System-\>Database Instance**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image93.png)
 
@@ -1598,19 +1556,19 @@ In this task, you will install the SAP database instance on s03-db-0 Azure VM by
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image95.png)
 
-5.  On the **Master Password** page, set the password to **demo\@pass123**, and select **Next**.
+5.  On the **Master Password** page, set the password to **demo\@pass123**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image96.png)
 
-6.  On the **Windows Domain** page, accept the default settings, and select **Next**.
+6.  On the **Windows Domain** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image97.png)
 
-7.  On the **Windows Domain \> Organizational Units** page, set **OU Path** to **S03**, and select **Next**.
+7.  On the **Windows Domain \> Organizational Units** page, set **OU Path** to **S03**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image98.png)
 
-8.  On the **MS SQL Server Database Connection** page, ensure that **Database instance** is set to **S03-DB-0**, and select **Next**.
+8.  On the **MS SQL Server Database Connection** page, ensure that **Database instance** is set to **S03-DB-0**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image99.png)
 
@@ -1626,51 +1584,51 @@ In this task, you will install the SAP database instance on s03-db-0 Azure VM by
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image102.png)
 
-12. Select **Next** again once the location of the software packages has been identified.
+12. Select **Next** again once the location of the software packages has been identified
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image103.png)
 
-13. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**.
+13. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image104.png)
 
-14. On the **Operating System Users** page, accept the default settings, and select **Next**.
+14. On the **Operating System Users** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image105.png)
 
-15. On the **Media Browser** page, set the **Package Location** entry to the file system path of the **nw75\_osindep\_51050829\_3\\data\_units\\exp1** folder, and select **Next**.
+15. On the **Media Browser** page, set the **Package Location** entry to the file system path of the **nw75\_osindep\_51050829\_3\\data\_units\\exp1** folder, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image106.png)
 
-16. On the **MS SQL Server Database Schema** page, accept the default settings, and select **Next**.
+16. On the **MS SQL Server Database Schema** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image107.png)
 
-17. On the **MS SQL Server Data Files** page, select the option **4 for small systems**, and select **Next**.
+17. On the **MS SQL Server Data Files** page, select the option **4 for small systems**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image108.png)
 
-18. On the **MS SQL Server Database Files** page, change the path of the log file to **L:\\S03LOG1**, accept all other default settings, and select **Next**.
+18. On the **MS SQL Server Database Files** page, change the path of the log file to **L:\\S03LOG1**, accept all other default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image109.png)
 
-19. On the **SQL Server Memory Configuration** page, accept the default settings, and select **Next**.
+19. On the **SQL Server Memory Configuration** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image110.png)
 
-20. On the **Declustering/Depooling Option** page, accept the default setting, and select **Next**.
+20. On the **Declustering/Depooling Option** page, accept the default setting, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image111.png)
 
-21. On the **SAP System Database Import** page, accept the default settings, and select **Next**.
+21. On the **SAP System Database Import** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image112.png)
 
-22. On the **Parameter Summary** page, select **Next**.
+22. On the **Parameter Summary** page, select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image113.png)
 
-23. Monitor the progress of the installation on the **Task Progress** page.
+23. Monitor the progress of the installation on the **Task Progress** page
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image114.png)
 
@@ -1702,7 +1660,7 @@ From SQL Server Management Studio on s03-db-0, use the New Availability Group Wi
 
     -   A shared network location accessible by all replicas: [**\\\\S03-DB-0\\Backup**](file://S03-DB-0/Backup)
 
-Note that majority of customers choose to use Transparent Data Encryption (TDE) when deploying SQL Server databases to Azure. If you use TDE, then you cannot use the Always-On Availability Group wizard. Instead, you have to follow the instructions described in <https://blogs.msdn.microsoft.com/saponsqlserver/2017/04/04/more-questions-from-customers-about-sql-server-transparent-data-encryption-tde-azure-key-vault/> . Alternatively, you can enable TDE after establishing the Always On Availability Group, however this is a tedious and slow process. For the purpose of this lab, you will not enable TDE and use the Always-On Availability Group wizard when setting up the Always-On Availability Group.
+**Note:** The majority of customers choose to use Transparent Data Encryption (TDE) when deploying SQL Server databases to Azure. If you use TDE, then you cannot use the Always-On Availability Group wizard. Instead, you have to follow the instructions described in <https://blogs.msdn.microsoft.com/saponsqlserver/2017/04/04/more-questions-from-customers-about-sql-server-transparent-data-encryption-tde-azure-key-vault/> . Alternatively, you can enable TDE after establishing the Always On Availability Group, however this is a tedious and slow process. For the purpose of this lab, you will not enable TDE and use the Always-On Availability Group wizard when setting up the Always-On Availability Group.
 
 In the Failover Cluster Manager, create a new Client Access Point with the following settings:
 
