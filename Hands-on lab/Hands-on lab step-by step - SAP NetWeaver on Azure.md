@@ -1718,17 +1718,17 @@ Bring the Always-On Availability Group clustered role online.
 
     When prompted, sign in with the Service Administrator account of your Azure subscription (if the sign-in fails, rerun the script). Wait for the configuration of the Cloud Witness quorum completes
 
-4.  From the Remote Desktop session to adPDC, start Active Directory Administrative Center.
+4.  From the Remote Desktop session to adPDC, start Active Directory Administrative Center
 
-5.  In the Active Directory Administrative Center, navigate to the Computers container of the contoso.com domain, and display its properties.
+5.  In the Active Directory Administrative Center, navigate to the Computers container of the contoso.com domain, and display its properties
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image116.png)
 
-6.  In the **Computers** window, navigate to the **Extensions** section, and on the **Security** tab, select **Advanced**.
+6.  In the **Computers** window, navigate to the **Extensions** section, and on the **Security** tab, select **Advanced**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image117.png)
 
-7.  In the **Advanced Security Settings for Computers** window, select **Add**.
+7.  In the **Advanced Security Settings for Computers** window, select **Add**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image118.png)
 
@@ -1740,7 +1740,7 @@ Bring the Always-On Availability Group clustered role online.
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image120.png)
 
-10. Back in the **Advanced Security for Computers** window, select **OK**.
+10. Back in the **Advanced Security for Computers** window, select **OK**
 
 11. From the Windows PowerShell ISE session, run:
 
@@ -1754,23 +1754,23 @@ Bring the Always-On Availability Group clustered role online.
     }
 ```
 
-12. On s03-db-0, from the Start menu, start **SQL Server Configuration Manager**.
+12. On s03-db-0, from the Start menu, start **SQL Server Configuration Manager**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image121.png)
 
-13. In **SQL Server Configuration Manager**, display the **Properties** window of the **SQL Server (MSSQLSERVER)** service, switch to the **Always-On High Availability** tab, and enable the checkbox labeled **Enable Always-On Availability Groups**.
+13. In **SQL Server Configuration Manager**, display the **Properties** window of the **SQL Server (MSSQLSERVER)** service, switch to the **Always-On High Availability** tab, and enable the checkbox labeled **Enable Always-On Availability Groups**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image122.png)
 
-14. When prompted, select **OK**.
+14. When prompted, select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image123.png)
 
-15. Restart the **SQL Server (MSSQLSERVER)** service.
+15. Restart the **SQL Server (MSSQLSERVER)** service
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image124.png)
 
-16. Repeat steps 6-8 on **s03-db-1**.
+16. Repeat steps 6-8 on **s03-db-1**
 
 17. On s03-db-0, create a new share **C:\\Backup** named **Backup**. On the share level and on the ReFS level, grant Read/Write permissions to CONTOSO\\s03-db-0-sqlsvc account and Read permissions to the CONTOSO\\s03-db-1-sqlsvc account.
 
@@ -1778,25 +1778,25 @@ Bring the Always-On Availability Group clustered role online.
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image126.png)
 
-18. On s03-db-0, from the Start menu, start **SQL Server Management Studio**.
+18. On s03-db-0, from the Start menu, start **SQL Server Management Studio**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image127.png)
 
-19. In SQL Server Management Studio, connect to **S03-DB-0**, and use **Windows Authentication** to authenticate.
+19. In SQL Server Management Studio, connect to **S03-DB-0**, and use **Windows Authentication** to authenticate
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image128.png)
 
-20. From **SQL Server Management Studio** on s03-db-0, start **New Availability Group Wizard**.
+20. From **SQL Server Management Studio** on s03-db-0, start **New Availability Group Wizard**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image129.png)
 
-21. On the **Introduction** page of the **New Availability Group** wizard, select **Next**.
+21. On the **Introduction** page of the **New Availability Group** wizard, select **Next**
 
-22. On the **Specify an availability group name** page, in the **Availability group name** text box, type **s03-db-ag0**, and select **Next**.
+22. On the **Specify an availability group name** page, in the **Availability group name** text box, type **s03-db-ag0**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image130.png)
 
-23. On the **Select user database for availability group** page, select the **S03** check box, and select **Next**.
+23. On the **Select user database for availability group** page, select the **S03** check box, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image131.png)
 
@@ -1804,11 +1804,11 @@ Bring the Always-On Availability Group clustered role online.
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image132.png)
 
-25. On the **Specify Replicas** page, enable automatic failover and synchronous commit.
+25. On the **Specify Replicas** page, enable automatic failover and synchronous commit
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image133.png)
 
-26. Select the **Endpoints** tab to review the database mirroring endpoints, and select **Next**.
+26. Select the **Endpoints** tab to review the database mirroring endpoints, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image134.png)
 
@@ -1820,47 +1820,47 @@ Bring the Always-On Availability Group clustered role online.
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image136.png)
 
-29. On the **Summary** page, select **Finish**.
+29. On the **Summary** page, select **Finish**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image137.png)
 
-30. On the **Results** page, select **Close**.
+30. On the **Results** page, select **Close**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image138.png)
 
-31. On s03-db-0, start **Failover Cluster Manager,** select the **Networks** node, and note the network name (**Cluster Network 1**).
+31. On s03-db-0, start **Failover Cluster Manager,** select the **Networks** node, and note the network name (**Cluster Network 1**)
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image139.png)
 
-32. In the **Failover Cluster Manager** console, navigate to the **Roles** node, and right-click **s03-db-ag**. In the right-click menu, select **Add Resource** followed by **Client Access Point**.
+32. In the **Failover Cluster Manager** console, navigate to the **Roles** node, and right-click **s03-db-ag**. In the right-click menu, select **Add Resource** followed by **Client Access Point**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image140.png)
 
-33. On the **Client Access Point** page of the **New Resource Wizard**, in the **Name** textbox, type **s03-db-agl0**, and select **Next**.
+33. On the **Client Access Point** page of the **New Resource Wizard**, in the **Name** textbox, type **s03-db-agl0**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image141.png)
 
-34. On the **Confirmation** page, select **Next**.
+34. On the **Confirmation** page, select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image142.png)
 
-35. On the **Summary** page, select **Finish**.
+35. On the **Summary** page, select **Finish**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image143.png)
 
-36. In the Failover Cluster Manager console, display the **Properties** dialog box of the IP address resource of the availability group listener resource.
+36. In the Failover Cluster Manager console, display the **Properties** dialog box of the IP address resource of the availability group listener resource
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image144.png)
 
-37. In the **IP Address: Address on Cluster Network 1 Properties** dialog box, select the **Static IP Address** option, set the **Address to 10.0.1.16** (to match the IP address assigned to the s03-lb-db load balancer), and select **OK**.
+37. In the **IP Address: Address on Cluster Network 1 Properties** dialog box, select the **Static IP Address** option, set the **Address to 10.0.1.16** (to match the IP address assigned to the s03-lb-db load balancer), and select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image145.png)
 
-38. If necessary, back in the **Failover Cluster Manager** console, take the **s03-db-ag0** resource offline.
+38. If necessary, back in the **Failover Cluster Manager** console, take the **s03-db-ag0** resource offline
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image146.png)
 
-39. Display the properties of the **s03-db-ag0** resource. In the **s03-db-ag0 Properties** dialog box, switch to the **Dependencies** tab, and add a dependency on **Name: s03-db-agl0**. Select **OK** when completed.
+39. Display the properties of the **s03-db-ag0** resource. In the **s03-db-ag0 Properties** dialog box, switch to the **Dependencies** tab, and add a dependency on **Name: s03-db-agl0**. Select **OK** when completed
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image147.png)
 
@@ -1878,27 +1878,27 @@ Bring the Always-On Availability Group clustered role online.
     Get-ClusterResource $IPResourceName | Set-ClusterParameter -Multiple @{"Address"="$ilbIP";"ProbePort"=$probePort;"SubnetMask"="255.255.255.255";"Network"="$clusterNetworkName";"EnableDhcp"=0}
 ```
 
-41. From the Failover Cluster Manager console, bring the **s03-db-agl0** resource online.
+41. From the Failover Cluster Manager console, bring the **s03-db-agl0** resource online
 
-42. Switch to **SQL Server Management Studio,** navigate to the **s03-db-agl0** listener, and display its **Properties**.
+42. Switch to **SQL Server Management Studio,** navigate to the **s03-db-agl0** listener, and display its **Properties**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image148.png)
 
-43. In the **Availability Group Listener Properties -- s03-db-agl0** dialog box, set **Port** to **1433**, and select **OK**.
+43. In the **Availability Group Listener Properties -- s03-db-agl0** dialog box, set **Port** to **1433**, and select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image149.png)
 
-44. In the Failover Cluster Manager, bring the Always-On Availability Group clustered role **s03-db-ag0** online.
+44. In the Failover Cluster Manager, bring the Always-On Availability Group clustered role **s03-db-ag0** online
 
-45. In the SQL Server Management Studio, right-click on the **Always-On High Availability** folder, and select **Show Dashboard**.
+45. In the SQL Server Management Studio, right-click on the **Always-On High Availability** folder, and select **Show Dashboard**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image150.png)
 
-46. On Dashboard, select the **s03-db-ag0** link.
+46. On Dashboard, select the **s03-db-ag0** link
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image151.png)
 
-47. Verify that Always-On Availability Group s03-db-ag0 is in healthy state.
+47. Verify that Always-On Availability Group s03-db-ag0 is in healthy state
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image152.png)
 
@@ -2060,17 +2060,17 @@ Bring the Always-On Availability Group clustered role online.
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image155.png)
 
-53. Copy the resulting T-SQL script into Clipboard.
+53. Copy the resulting T-SQL script into Clipboard
 
-54. From the SQL Server Management Studio, connect to s03-db-1.
+54. From the SQL Server Management Studio, connect to s03-db-1
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image156.png)
 
-55. From the SQL Server Management Studio, open the **New Query** window targeting the **master** database of S03-DB-1.
+55. From the SQL Server Management Studio, open the **New Query** window targeting the **master** database of S03-DB-1
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image157.png)
 
-56. In the New Query window, paste the content of Clipboard. Remove all lines except for those that reference the **s03**, **CONTOSO\\s03-adm**, and **CONTOSO\\SAPService03** logins and execute the resulting T-SQL script.
+56. In the New Query window, paste the content of Clipboard. Remove all lines except for those that reference the **s03**, **CONTOSO\\s03-adm**, and **CONTOSO\\SAPService03** logins and execute the resulting T-SQL script
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image158.png)
 
@@ -2078,25 +2078,25 @@ Bring the Always-On Availability Group clustered role online.
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image159.png)
 
-58. In the **Server Role Properties -- sysadmin** window, select **Add**.
+58. In the **Server Role Properties -- sysadmin** window, select **Add**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image160.png)
 
-59. In the **Select Server Login or Role** dialog box, select **Browse**.
+59. In the **Select Server Login or Role** dialog box, select **Browse**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image161.png)
 
-60. In the **Browse for Objects** dialog box, select the three logins you created earlier, and select **OK**.
+60. In the **Browse for Objects** dialog box, select the three logins you created earlier, and select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image162.png)
 
-61. Select **OK** twice to finalize the change.
+61. Select **OK** twice to finalize the change
 
 ### Task 6: Modify the SAP Default Profile
 
 In this task, you will modify the SAP default profile in order to ensure the application tier communicates with the database tier via the newly created Always-On Availability Group listener. To accomplish this, set the value of the **dbs/mss/server** parameter to the name of the newly created Availability Group listener (**s03-db-agl0**) in the default profile of the S03 SAP system (hosted on the shared disk of the ASCS layer). In order for the change to take effect, restart the VMs that constitute the SAP ASCS layer.
 
-1.  Within the RDP session to s03-ascs-0 VM, open the file **S:\\usr\\sap\\S03\\SYS\\profile\\DEFAULT.PFL** in Notepad**.**
+1.  Within the RDP session to s03-ascs-0 VM, open the file **S:\\usr\\sap\\S03\\SYS\\profile\\DEFAULT.PFL** in Notepad
 
 2.  Change the entry **dbs/mss/server** from:
 
@@ -2110,7 +2110,7 @@ to:
     dbs/mss/server = S03-DB-AGL0
 ```
 
-3.  Save the file.
+3.  Save the file
 
 ### Summary
 
@@ -2143,27 +2143,27 @@ In this task, you will configure the Azure VMs in the Application layer by mount
     }
 ```
 
-3.  Within the RDP session to s03-id-0 VM, start installation of Microsoft ODBC Driver for SQL Server (available from <https://www.microsoft.com/en-us/download/confirmation.aspx?id=53339>).
+3.  Within the RDP session to s03-id-0 VM, start installation of Microsoft ODBC Driver for SQL Server (available from <https://www.microsoft.com/en-us/download/confirmation.aspx?id=53339>)
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image163.png)
 
-4.  On the **License Agreement** page, select **I accept the terms in the license agreement**, and select **Next**.
+4.  On the **License Agreement** page, select **I accept the terms in the license agreement**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image164.png)
 
-5.  On the **Feature Selection** page, select all features, and select **Next**.
+5.  On the **Feature Selection** page, select all features, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image165.png)
 
-6.  On the **Ready to install the Program** page, select **Next**.
+6.  On the **Ready to install the Program** page, select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image166.png)
 
-7.  On the **Completing the ODBC Driver 13 for SQL Server Installation** page, select **Finish**.
+7.  On the **Completing the ODBC Driver 13 for SQL Server Installation** page, select **Finish**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image167.png)
 
-8.  Repeat steps from 5-9 on **s03-di-1**. 
+8.  Repeat steps from 5-9 on **s03-di-1**
 
 ### Task 2: Install the SAP Primary Application Server (PAS) layer
 
@@ -2203,51 +2203,51 @@ Account for the fact you are using the virtual names and configure the following
 
     -   Set DisableStrictNameChecking to 1
 
-1.  From a Remote Desktop session to s03-di-0, start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media.
+1.  From a Remote Desktop session to s03-di-0, start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image23.png)
 
-2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>High Availability System-\>Primary Application Server instance**, and select **Next**.
+2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>High Availability System-\>Primary Application Server instance**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image168.png)
 
-3.  When prompted, select **OK**. You will be automatically logged off. Log back on by using the same user credentials (**CONTOSO\\s03-su**).
+3.  When prompted, select **OK**. You will be automatically logged off. Log back on by using the same user credentials (**CONTOSO\\s03-su**)
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image169.png)
 
-4.  Once you log back on, the **Software Provisioning** wizard will automatically restart. On the **General SAP System Parameters** page, in the **Profile Directory** textbox, type **\\\\s03-ascs-v0\\sapmnt\\S03\\SYS\\profile**, and select **Next**.
+4.  Once you log back on, the **Software Provisioning** wizard will automatically restart. On the **General SAP System Parameters** page, in the **Profile Directory** textbox, type **\\\\s03-ascs-v0\\sapmnt\\S03\\SYS\\profile**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image170.png)
 
-5.  On the **Master Password** page, set the password to **demo\@pass123**, and select **Next**.
+5.  On the **Master Password** page, set the password to **demo\@pass123**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image171.png)
 
-6.  On the **Windows Domain** page, accept the default settings, and select **Next**.
+6.  On the **Windows Domain** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image172.png)
 
-7.  On the **MS SQL Server Database Connection** page, ensure that **Database instance** is set to **S03-DB-AGL0**, and select **Next**.
+7.  On the **MS SQL Server Database Connection** page, ensure that **Database instance** is set to **S03-DB-AGL0**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image173.png)
 
-8.  On the **Existing MS SQL Server Database** page, accept the default settings, and select **Next**.
+8.  On the **Existing MS SQL Server Database** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image174.png)
 
-9.  On the **Software Package Browser** page, point to **SAP\\Kernel\_51050826\_10\\DATA\_UNITS\\K\_745\_U\_WINDOWS\_X86\_64**, and select **Next**.
+9.  On the **Software Package Browser** page, point to **SAP\\Kernel\_51050826\_10\\DATA\_UNITS\\K\_745\_U\_WINDOWS\_X86\_64**, and select **Next**
 
     ![C:\\Users\\Admin\\AppData\\Local\\Temp\\SNAGHTMLa7cbb291.PNG](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image175.png)
 
-10. On the **Software Package Browser** page, point to **SAP\\SAPDBEXE**, and select **Next**.
+10. On the **Software Package Browser** page, point to **SAP\\SAPDBEXE**, and select **Next**
 
     ![C:\\Users\\Admin\\AppData\\Local\\Temp\\SNAGHTMLa7cf5868.PNG](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image176.png)
 
-11. Select **Next** again once the location of the software packages has been identified.
+11. Select **Next** again once the location of the software packages has been identified
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image177.png)
 
-12. On the **Prerequisites Checker Results** page, identify the missing prerequisites.
+12. On the **Prerequisites Checker Results** page, identify the missing prerequisites
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image178.png)
 
@@ -2295,59 +2295,59 @@ Account for the fact you are using the virtual names and configure the following
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image179.png)
 
-16. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**.
+16. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image180.png)
 
-17. On the **Operating System Users** page, type **demo\@pass123** as the password, and select **Next**.
+17. On the **Operating System Users** page, type **demo\@pass123** as the password, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image181.png)
 
-18. On the **Primary Application Server Instance** page, set **PAS Instance Host Name** to **s03-di-v0**, and select **Next**.
+18. On the **Primary Application Server Instance** page, set **PAS Instance Host Name** to **s03-di-v0**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image182.png)
 
-19. On the **ABAP Message Server Ports and Transport Host** page, accept the default settings, and select **Next**.
+19. On the **ABAP Message Server Ports and Transport Host** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image183.png)
 
-20. On the **SLD Destination for the SAP System OS Level** page, accept the default settings, and select **Next**.
+20. On the **SLD Destination for the SAP System OS Level** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image184.png)
 
-21. On the **Message Server Access Control List** page, accept the default settings, and select **Next**.
+21. On the **Message Server Access Control List** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image185.png)
 
-22. On the **Media Browser** page, set the **Package Location** entry to the file system path of the **nw75\_osindep\_51050829\_3\\data\_units\\exp1** folder, and select **Next**.
+22. On the **Media Browser** page, set the **Package Location** entry to the file system path of the **nw75\_osindep\_51050829\_3\\data\_units\\exp1** folder, and select **Next**
 
     ![C:\\Users\\Admin\\AppData\\Local\\Temp\\SNAGHTMLa84346a1.PNG](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image186.png)
 
-23. On the **SAP System DDIC Users** page, accept the default settings, and select **Next**.
+23. On the **SAP System DDIC Users** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image187.png)
 
-24. On the **Secure Storage Key Generation** page, enable the **Default Key** option, and select **Next**.
+24. On the **Secure Storage Key Generation** page, enable the **Default Key** option, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image188.png)
 
-25. On the **Parameter Summary** page, select **Next**.
+25. On the **Parameter Summary** page, select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image189.png)
 
-26. Monitor the progress of the installation on the **Task Progress** page.
+26. Monitor the progress of the installation on the **Task Progress** page
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image190.png)
 
-27. Wait until the installation completes (this might take about 30 minutes). Once the installation completes, select **OK**.
+27. Wait until the installation completes (this might take about 30 minutes). Once the installation completes, select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image191.png)
 
-28. On s03-di-0, start **SAP Management Console**.
+28. On s03-di-0, start **SAP Management Console**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image66.png)
 
-29. In the SAP Management Console, verify the SAP deployment is operational.
+29. In the SAP Management Console, verify the SAP deployment is operational
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image192.png)
 
@@ -2371,15 +2371,15 @@ In this task, you will install the SAP AAS of HA deployment of MS SQL Server-bas
 
 -   Set all passwords to **demo\@pass123**
 
-1.  From a Remote Desktop session to s03-di-1, start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media.
+1.  From a Remote Desktop session to s03-di-1, start SAP Software Provisioning Manager by double-clicking **sapinst.exe** in the **swpm** folder in the source media
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image23.png)
 
-2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>High Availability System-\>Additional Application Server instance**, and select **Next**.
+2.  On the **Welcome to SAP Installation** page, navigate to **SAP NetWeaver 7.5-\>MS SQL Server-\>SAP Systems-\>Application Server ABAP-\>High Availability System-\>Additional Application Server instance**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image193.png)
 
-3.  When prompted, select **OK**. You will be automatically logged off. Log back on by using the same user credentials (**CONTOSO\\s03-su**).
+3.  When prompted, select **OK**. You will be automatically logged off. Log back on by using the same user credentials (**CONTOSO\\s03-su**)
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image194.png)
 
@@ -2387,67 +2387,67 @@ In this task, you will install the SAP AAS of HA deployment of MS SQL Server-bas
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image195.png)
 
-5.  On the **Master Password** page, set the password to **demo\@pass123**, and select **Next**.
+5.  On the **Master Password** page, set the password to **demo\@pass123**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image196.png)
 
-6.  On the **Windows Domain** page, accept the default settings, and select **Next**.
+6.  On the **Windows Domain** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image197.png)
 
-7.  On the **MS SQL Server Database Connection** page, ensure that **Database instance** is set to **S03-DB-AGL0**, and select **Next**.
+7.  On the **MS SQL Server Database Connection** page, ensure that **Database instance** is set to **S03-DB-AGL0**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image198.png)
 
-8.  On the **Existing MS SQL Server Database** page, accept the default settings, and select **Next**.
+8.  On the **Existing MS SQL Server Database** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image199.png)
 
-9.  On the **Software Package Browser** page, point to **SAP\\Kernel\_51050826\_10\\DATA\_UNITS\\K\_745\_U\_WINDOWS\_X86\_64**, and select **Next**.
+9.  On the **Software Package Browser** page, point to **SAP\\Kernel\_51050826\_10\\DATA\_UNITS\\K\_745\_U\_WINDOWS\_X86\_64**, and select **Next**
 
     ![C:\\Users\\Admin\\AppData\\Local\\Temp\\SNAGHTML305fc51.PNG](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image200.png)
 
-10. On the **Software Package Browser** page, point to **SAP\\SAPDBEXE**, and select **Next**.
+10. On the **Software Package Browser** page, point to **SAP\\SAPDBEXE**, and select **Next**
 
     ![C:\\Users\\Admin\\AppData\\Local\\Temp\\SNAGHTML307ceb0.PNG](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image201.png)
 
-11. Select **Next** again once the location of the software packages has been identified.
+11. Select **Next** again once the location of the software packages has been identified
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image202.png)
 
-12. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**.
+12. On the **Windows Domain for SAP Host Agent** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image203.png)
 
-13. On the **Operating System Users** page, type **demo\@pass123** as the password, and select **Next**.
+13. On the **Operating System Users** page, type **demo\@pass123** as the password, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image204.png)
 
-14. On the **Additional Application Server Instance** page, set **AAS Instance Host Name** to **s03-di-v1**, and select **Next**.
+14. On the **Additional Application Server Instance** page, set **AAS Instance Host Name** to **s03-di-v1**, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image205.png)
 
-15. On the **Message Server Access Control List** page, accept the default settings, and select **Next**.
+15. On the **Message Server Access Control List** page, accept the default settings, and select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image206.png)
 
-16. On the **Parameter Summary** page, select **Next**.
+16. On the **Parameter Summary** page, select **Next**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image207.png)
 
-17. Monitor the progress of the installation on the **Task Progress** page.
+17. Monitor the progress of the installation on the **Task Progress** page
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image208.png)
 
-18. Wait until the installation completes. This might take about 10 minutes. Once the installation completes, select **OK**.
+18. Wait until the installation completes. This might take about 10 minutes. Once the installation completes, select **OK**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image209.png)
 
-19. On s03-di-1, start **SAP Management Console**.
+19. On s03-di-1, start **SAP Management Console**
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image66.png)
 
-20. In the SAP Management Console, verify the SAP deployment is operational.
+20. In the SAP Management Console, verify the SAP deployment is operational
 
     ![](images\Hands-onlabstep-bystep-SAPonAzureimages/media/image210.png)
 
@@ -2455,7 +2455,7 @@ In this task, you will install the SAP AAS of HA deployment of MS SQL Server-bas
 
 In this task, you will install SAP Enhanced Monitoring Extension for SAP on Azure VMs included in your SAP deployment.
 
-1.  From the lab computer, start a Windows PowerShell ISE window as Administrator.
+1.  From the lab computer, start a Windows PowerShell ISE window as Administrator
 
 2.  In the Script pane, type the following script, and press F5 to execute it. When prompted to sign in after typing the first command, type in the credentials you used to authenticate to your Azure subscription.
 
