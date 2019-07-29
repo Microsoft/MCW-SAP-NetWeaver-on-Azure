@@ -28,6 +28,7 @@ At the end of this whiteboard design session, you will be better able to archite
 ### Hands-on lab 
 
 In this hands-on lab you will setup and configure SAP NetWeaver by using a combination of Azure Infrastructure as a Service (IaaS) and Platform as a Service (PaaS) components. You will setup identity management by using Azure Active Directory Domain Services (Azure AD DS), file sharing by using Azure Files service, NetWeaver application and database tiers by using Azure virtual machines (VMs) and integrate them with Active Directory. You will then setup high-availability for SAP ASCS components hosted on Azure VMs by configuring failover clustering. Finally, you will configure the database tier with Always-On Availability Groups and configure the NetWeaver application servers for redundancy.
+
 As you step through the hands-on-lab, you will learn how to optimize deployment of SAP on Azure, including configuration of SAP NetWeaver ASCS servers, SAP NetWeaver database servers, and SAP NetWeaver Application servers.
 
 ## Azure services and related products
