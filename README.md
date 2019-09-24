@@ -8,10 +8,12 @@ The company's CIO wants to significantly improve times it takes to provision dev
 
 Contoso CIO and the company CFO, along with Business Development Manager (BDM), Director of SAP Business Analysts, and Director of SAP Operations are all open to taking advantage of Azure as a platform and want their respective teams to be able to leverage the scalability and resiliency provided by the cloud platform.
 
+June 2019
+
 ## Target audience
 - Infrastructure Architect
 
-## Abstract
+## Abstracts
 
 ### Workshop
 
@@ -46,3 +48,15 @@ SAP on Azure
 ## Related references
 - [MCW](https://github.com/Microsoft/MCW)
 
+## Help & Support
+
+We welcome feedback and comments from Microsoft SMEs & learning partners who deliver MCWs.  
+
+***Having trouble?***
+- First, verify you have followed all written lab instructions (including the Before the Hands-on lab document).
+- Next, submit an issue with a detailed description of the problem.
+- Please do not submit pull requests. Our authors will review open issues and submit pull requests, as needed, for approval.  
+
+If you are planning to present a workshop, *review and test the materials early*! We recommend at least two weeks prior.
+
+### Please allow 5 - 10 business days for review and resolution of issues.
