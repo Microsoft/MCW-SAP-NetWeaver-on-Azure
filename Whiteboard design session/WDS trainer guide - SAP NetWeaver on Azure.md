@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-June 2019
+March 2020
 </div>
 
 
@@ -40,7 +40,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Customer objections](#customer-objections)
         - [Key design considerations](#key-design-considerations)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-        - [Additional references](#additional-references)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
         - [Architecting network connectivity](#architecting-network-connectivity)
         - [Architecting (ASCS) components](#architecting-ascs-components)
@@ -49,7 +48,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Determining estimated cost of the solution](#determining-estimated-cost-of-the-solution)
     - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+        - [Additional references](#additional-references)
 - [SAP on Azure whiteboard design session trainer guide](#sap-on-azure-whiteboard-design-session-trainer-guide)
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
