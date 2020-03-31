@@ -1,4 +1,4 @@
-![Microsoft Cloud Workshops icon](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 SAP NetWeaver on Azure
@@ -136,17 +136,17 @@ In this task, you will deploy two Azure VMs hosting Active Directory domain cont
 
 1.  From the lab computer, start a web browser, and navigate to the Azure portal at <https://portal.azure.com>
 
-1.  When prompted, sign in to the Azure subscription you will be using in this lab.
+2.  When prompted, sign in to the Azure subscription you will be using in this lab.
 
-1.  From the lab computer, open another web browser window and navigate to <https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc>
+3.  From the lab computer, open another web browser window and navigate to <https://github.com/Azure/azure-quickstart-templates/tree/master/active-directory-new-domain-ha-2-dc>
 
-1.  On the **Create 2 new Windows VMs, create a new AD Forest, Domain and 2 DCs in an availability set** page, select **Deploy to Azure**
+4.  On the **Create 2 new Windows VMs, create a new AD Forest, Domain and 2 DCs in an availability set** page, select **Deploy to Azure**
 
-1.  The Web browser will automatically open the Azure portal and display the **Create a new AD Domain with 2 Domain Controllers** blade.
+5.  The Web browser will automatically open the Azure portal and display the **Create a new AD Domain with 2 Domain Controllers** blade.
 
-1.  On the **Create a new AD Domain with 2 Domain Controllers** blade, select **Edit template**.
+6.  On the **Create a new AD Domain with 2 Domain Controllers** blade, select **Edit template**.
 
-1.  On the **Edit template**, scroll down to the variables section, modify the values of the following variables, and select **Save**:
+7.  On the **Edit template**, scroll down to the variables section, modify the values of the following variables, and select **Save**:
 
     -   adVMSize: **Standard\_D4s\_v3**
 
@@ -164,13 +164,13 @@ In this task, you will deploy two Azure VMs hosting Active Directory domain cont
 
     -   adBDCNicIPAddress: **10.0.2.5**
 
-1.  Back on the **Create a new AD Domain with 2 Domain Controllers** blade, specify the following settings:
+8.  Back on the **Create a new AD Domain with 2 Domain Controllers** blade, specify the following settings:
 
-    -   Subscription: the name of the Azure subscription you are using for this lab.
+    -   Subscription: The name of the Azure subscription you are using for this lab.
 
     -   Resource group: **(New) s03-RG**
 
-    -   Location: the name of the Azure region you are using for this lab
+    -   Location: The name of the Azure region you are using for this lab
 
     -   Admin Username: **demouser**
 
@@ -178,7 +178,7 @@ In this task, you will deploy two Azure VMs hosting Active Directory domain cont
 
     -   Domain Name: **contoso.com**
 
-    -   Dns Prefix: any unique valid DNS name
+    -   Dns Prefix: Any unique valid DNS name.
 
     -   Pdc RDP Port: **3389**
 
@@ -190,9 +190,9 @@ In this task, you will deploy two Azure VMs hosting Active Directory domain cont
 
     > **Note**: Ensure that the value of the **\_artifacts Location** variable includes the trailing forward slash **/**.
 
-1.  Select the checkbox labeled **I agree to the terms and conditions stated above**, and select **Purchase**
+9.  Select the checkbox labeled **I agree to the terms and conditions stated above**, and select **Purchase**
 
-1.  Wait for the deployment to complete. This might take about 25 minutes.
+10.  Wait for the deployment to complete. This might take about 25 minutes.
 
 
 ### Task 2: Configure Azure virtual network
@@ -288,11 +288,11 @@ In this task, you will deploy Azure VMs that will be hosting your SAP implementa
 
 1.  Back on the **SAP NetWeaver 3-tier compatible Marketplace image** blade, specify the following settings:
 
-    -   Subscription: the name of the Azure subscription you are using for this lab.
+    -   Subscription: The name of the Azure subscription you are using for this lab.
 
     -   Resource group: **s03-RG**
 
-    -   Location: accept the default value. 
+    -   Location: Accept the default value. 
 
     -   Sap System Id: **s03**
 
@@ -312,7 +312,7 @@ In this task, you will deploy Azure VMs that will be hosting your SAP implementa
 
     -   Admin Password or Key: **demo\@pass123**
 
-    -   Subnet Id: the value returned when running the following commands from a PowerShell session of Cloud Shell:
+    -   Subnet Id: The value returned when running the following commands from a PowerShell session of Cloud Shell:
 
     ```powershell
     $vnet = Get-AzVirtualNetwork -ResourceGroupName s03-RG -Name s03-RG-vnet
@@ -324,13 +324,13 @@ In this task, you will deploy Azure VMs that will be hosting your SAP implementa
 
     ![Screenshot of the Windows PowerShell window with results from the previous commands displaying.](images/Hands-onlabstep-bystep-SAPonAzureimages/media/image17.png "Results from PowerShell")
 
-    -   Availability Zones: the default value
+    -   Availability Zones: The default value.
 
-    -   Location: the default value
+    -   Location: The default value.
 
-    -   Artifacts Location: the default value
+    -   Artifacts Location: The default value.
 
-    -   Artifacts Location Sas Token: the default value
+    -   Artifacts Location Sas Token: The default value.
 
 1.  Enable the checkbox labeled **I agree to the terms and conditions stated above** and select **Purchase**.
 
@@ -345,7 +345,7 @@ In this task, you will deploy Azure VMs that will be hosting your SAP implementa
 
 ### Task 4: Prepare the Azure virtual network and Contoso Active Directory for deployment of SAP NetWeaver
 
-In this task, you will prepare Azure virtual network and Contoso Active Directory for deployment of SAP Netweaver. In particular, you will:
+In this task, you will prepare Azure virtual network and Contoso Active Directory for deployment of SAP NetWeaver. In particular, you will:
 
 -   Create an organizational unit in the root of the contoso.com domain named **S03** that will host SAP-specific computer, users, and group objects.
 
@@ -847,13 +847,13 @@ In this task, you will create an Azure Storage account and the sapmnt file share
 
 1.  On the **Basics** tab of the **Create storage account** blade, specify the following settings and select **Next: Networking >**:
 
-    -   Subscription: the name of the Azure subscription you are using for this lab
+    -   Subscription: The name of the Azure subscription you are using for this lab.
 
     -   Resource group: **s03-RG**
 
-    -   Storage account name: any valid storage account name
+    -   Storage account name: Any valid storage account name.
 
-    -   Location: the name of the same Azure region which you used earlier in this exercise
+    -   Location: The name of the same Azure region which you used earlier in this exercise.
 
     -   Performance: **Standard**
 
@@ -894,7 +894,7 @@ In this task, you will configure the Azure Storage account File service to use A
 
 > **Note**: This functionality is in public preview at the time of authoring this content.
 
-1.  Within the Remote Desktop session to adPDC, start a web browser, navigate to the Github Azure Files samples repository at <https://github.com/Azure-Samples/azure-files-samples/releases>, download the latest version of AzFilesHybrid.zip file, and extract its content into the Downloads folder.
+1.  Within the Remote Desktop session to adPDC, start a web browser, navigate to the GitHub Azure Files samples repository at <https://github.com/Azure-Samples/azure-files-samples/releases>, download the latest version of AzFilesHybrid.zip file, and extract its content into the Downloads folder.
 
 1.  Within the Remote Desktop session to adPDC, from the Windows PowerShell ISE console, run the following to import the downloaded PowerShell module:
 
@@ -926,7 +926,7 @@ In this task, you will configure the Azure Storage account File service to use A
     Install-Module -Name Az -Force
     ```
 
-    >**Note:** When prompted whether to install NuGet provider, select **Yes**
+    >**Note:** When prompted whether to install NuGet provider, select **Yes**.
 
 1.  From the Windows PowerShell ISE console, run the following to authenticate to your Azure AD tenant:
 
