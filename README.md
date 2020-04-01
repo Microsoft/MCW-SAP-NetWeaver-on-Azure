@@ -8,7 +8,7 @@ The company's CIO wants to significantly improve times it takes to provision dev
 
 Contoso CIO and the company CFO, along with Business Development Manager (BDM), Director of SAP Business Analysts, and Director of SAP Operations are all open to taking advantage of Azure as a platform and want their respective teams to be able to leverage the scalability and resiliency provided by the cloud platform.
 
-June 2019
+March 2020
 
 ## Target audience
 - Infrastructure Architect
