@@ -1,4 +1,4 @@
-﻿![Microsoft Cloud Workshops icon](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 SAP NetWeaver on Azure
@@ -739,7 +739,7 @@ Migration to Microsoft Cloud offers a range of benefits:
 
 *Azure VM Design tips*
 
-Use the following tips and key considerations to design Azure VM to run the most mission critical SAP with extra large SAP database on Azure. 
+Use the following tips and key considerations to design Azure VM to run the most mission critical SAP with extra-large SAP database on Azure. 
 
 -   Use certified Azure VM types, especially for Production (M Series VM are certified for both Any DB and HANA). 
 
