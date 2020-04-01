@@ -1,4 +1,4 @@
-﻿![Microsoft Cloud Workshops icon](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
+﻿![Microsoft Cloud Workshops](https://github.com/Microsoft/MCW-Template-Cloud-Workshop/raw/master/Media/ms-cloud-workshop.png "Microsoft Cloud Workshops")
 
 <div class="MCWHeader1">
 SAP NetWeaver on Azure
@@ -9,7 +9,7 @@ Whiteboard design session trainer guide
 </div>
 
 <div class="MCWHeader3">
-June 2019
+March 2020
 </div>
 
 
@@ -19,7 +19,7 @@ Microsoft may have patents, patent applications, trademarks, copyrights, or othe
 
 The names of manufacturers, products, or URLs are provided for informational purposes only and Microsoft makes no representations and warranties, either expressed, implied, or statutory, regarding these manufacturers or the use of the products with any Microsoft technologies. The inclusion of a manufacturer or product does not imply endorsement of Microsoft of the manufacturer or product. Links may be provided to third party sites. Such sites are not under the control of Microsoft and Microsoft is not responsible for the contents of any linked site or any link contained in a linked site, or any changes or updates to such sites. Microsoft is not responsible for webcasting or any other form of transmission received from any linked site. Microsoft is providing these links to you only as a convenience, and the inclusion of any link does not imply endorsement of Microsoft of the site or the products contained therein.
 
-© 2019 Microsoft Corporation. All rights reserved.
+© 2020 Microsoft Corporation. All rights reserved.
 
 Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/Usage/General.aspx> are trademarks of the Microsoft group of companies. All other trademarks are property of their respective owners.
 
@@ -40,7 +40,6 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Customer objections](#customer-objections)
         - [Key design considerations](#key-design-considerations)
         - [Infographic for common scenarios](#infographic-for-common-scenarios)
-        - [Additional references](#additional-references)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution)
         - [Architecting network connectivity](#architecting-network-connectivity)
         - [Architecting (ASCS) components](#architecting-ascs-components)
@@ -49,7 +48,7 @@ Microsoft and the trademarks listed at <https://www.microsoft.com/en-us/legal/in
         - [Determining estimated cost of the solution](#determining-estimated-cost-of-the-solution)
     - [Step 3: Present the solution](#step-3-present-the-solution)
     - [Wrap-up](#wrap-up)
-    - [Additional references](#additional-references)
+        - [Additional references](#additional-references)
 - [SAP on Azure whiteboard design session trainer guide](#sap-on-azure-whiteboard-design-session-trainer-guide)
     - [Step 1: Review the customer case study](#step-1-review-the-customer-case-study-1)
     - [Step 2: Design a proof of concept solution](#step-2-design-a-proof-of-concept-solution-1)
@@ -740,7 +739,7 @@ Migration to Microsoft Cloud offers a range of benefits:
 
 *Azure VM Design tips*
 
-Use the following tips and key considerations to design Azure VM to run the most mission critical SAP with extra large SAP database on Azure. 
+Use the following tips and key considerations to design Azure VM to run the most mission critical SAP with extra-large SAP database on Azure. 
 
 -   Use certified Azure VM types, especially for Production (M Series VM are certified for both Any DB and HANA). 
 
