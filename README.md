@@ -1,5 +1,4 @@
-# Important - Please Note
-This workshop is archived and is no longer being maintained. Content is read-only.
+## This workshop is archived and is no longer being maintained. Content is read-only.
 
 # SAP NetWeaver on Azure
 
